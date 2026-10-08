@@ -1,0 +1,36 @@
+{# Karten für Beiträge (Artikel und News). Bild, Auszug und Datum kommen aus der Beitragsseite:
+   Bild = Feld „Bild“ oder erstes Bild im Ordner, Auszug = Feld „Kurztext“ oder Anfang des Textes. #}
+
+{# Große Artikel-Karte: Bild seitlich, Titel, Auszug, Button #}
+{% macro article(post, button_text, show_date, align) %}
+    {% import 'macros/icons.html.twig' as ic %}
+    {% set img = post.header.image ? post.media[post.header.image] : post.media.images|first %}
+    {% set text = post.header.teaser ?: (post.summary|striptags|replace({"\n": ' '})|trim|truncate(260)) %}
+    <article class="article-card lift{{ align == 'top' ? ' align-top' }}">
+        <a class="ac-media" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+            {% if img %}<img src="{{ (img.width > 1000 ? img.cropZoom(1000, 700) : img).url }}" alt="" loading="lazy">{% endif %}
+        </a>
+        <div class="ac-body">
+            {% if show_date is not same as(false) %}<p class="post-date"><time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date('THEME_ABOUTME.DATE_FORMAT'|t) }}</time></p>{% endif %}
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="ac-text">{{ text }}</p>
+            <div><a class="pill-link" href="{{ post.url }}">{{ button_text ?: 'THEME_ABOUTME.READ_MORE'|t }}{{ ic.icon('arrow') }}</a></div>
+        </div>
+    </article>
+{% endmacro %}
+
+{# Kompakte News-Karte: Bild oben, Datum, Titel, zwei Zeilen Text #}
+{% macro news(post) %}
+    {% set img = post.header.image ? post.media[post.header.image] : post.media.images|first %}
+    {% set text = post.header.teaser ?: (post.summary|striptags|replace({"\n": ' '})|trim|truncate(200)) %}
+    <article class="news-card lift">
+        <a class="nc-media" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+            {% if img %}<img src="{{ (img.width > 800 ? img.cropZoom(800, 500) : img).url }}" alt="" loading="lazy">{% endif %}
+        </a>
+        <div class="nc-body">
+            <p class="post-date"><time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date('THEME_ABOUTME.DATE_FORMAT'|t) }}</time></p>
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="nc-text">{{ text }}</p>
+        </div>
+    </article>
+{% endmacro %}

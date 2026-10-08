@@ -1,0 +1,24 @@
+title: 'Übersicht (Artikel oder News)'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_overview:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.UEBERSICHT
+          ordering@: 1
+          fields:
+            overview_info:
+              type: section
+              text: THEME_ABOUTME.ADMIN.LISTET_ALLE_UNTERSEITEN_BEITRAEGE_NACH_D
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DEM_TITEL
+            header.lead:
+              type: textarea
+              label: THEME_ABOUTME.ADMIN.EINLEITUNG_UNTER_DEM_TITEL
+              rows: 2
+            header.child_type:
+              type: hidden
+              default: post

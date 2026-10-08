@@ -1,0 +1,159 @@
+title: 'Seite mit Einleitung'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_page:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.SEITENKOPF
+          ordering@: 1
+          fields:
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DEM_TITEL
+              placeholder: THEME_ABOUTME.ADMIN.EHRENAMT
+            header.lead:
+              type: textarea
+              label: THEME_ABOUTME.ADMIN.EINLEITUNG_UNTER_DEM_TITEL
+              rows: 3
+            link_section:
+              type: section
+              title: THEME_ABOUTME.ADMIN.LINK_KARTE_AM_TEXTENDE
+              text: THEME_ABOUTME.ADMIN.OPTIONAL_Z_B_MEHR_UEBER_DEN_VEREIN_MIT_L
+            header.link_label:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE
+              placeholder: THEME_ABOUTME.ADMIN.MEHR_UEBER_DEN_VEREIN
+            header.link_text:
+              type: text
+              label: THEME_ABOUTME.ADMIN.LINKTEXT
+              placeholder: example.com
+            header.link_url:
+              type: url
+              label: THEME_ABOUTME.ADMIN.ADRESSE
+              placeholder: 'https://example.com'
+            header.link_logo:
+              type: filepicker
+              label: 'Logo (optional)'
+              folder: '@self'
+              preview_images: true
+              accept:
+                - .svg
+                - .png
+                - .jpg
+                - .jpeg
+                - .webp
+            header.link_logo_alt:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BILDBESCHREIBUNG_DES_LOGOS
+              placeholder: THEME_ABOUTME.ADMIN.PH_LOGO_ALT
+        nh_media:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.GALERIE_VIDEOS
+          ordering@: 2
+          fields:
+            gallery_section:
+              type: section
+              title: THEME_ABOUTME.ADMIN.GALERIE
+              text: THEME_ABOUTME.ADMIN.BILDER_ZUERST_IM_REITER_INHALT_BEI_DEN_M
+            header.gallery_eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_GALERIE
+              placeholder: THEME_ABOUTME.ADMIN.IMPRESSIONEN
+            header.gallery_title:
+              type: text
+              label: THEME_ABOUTME.ADMIN.UEBERSCHRIFT_DER_GALERIE
+            header.gallery_format:
+              type: select
+              label: THEME_ABOUTME.ADMIN.GALERIE_FORMAT
+              help: THEME_ABOUTME.ADMIN.GALERIE_FORMAT_HILFE
+              size: medium
+              default: landscape
+              options:
+                landscape: THEME_ABOUTME.ADMIN.GALERIE_FORMAT_QUER
+                portrait: THEME_ABOUTME.ADMIN.GALERIE_FORMAT_HOCH
+            header.gallery:
+              type: list
+              label: THEME_ABOUTME.ADMIN.BILDER
+              style: vertical
+              collapsed: true
+              fields:
+                .uid:
+                  type: hidden
+                .image:
+                  type: filepicker
+                  label: THEME_ABOUTME.ADMIN.BILD
+                  folder: '@self'
+                  preview_images: true
+                  accept:
+                    - .jpg
+                    - .jpeg
+                    - .png
+                    - .webp
+                    - .gif
+                .format:
+                  type: select
+                  label: THEME_ABOUTME.ADMIN.GALERIE_BILD_FORMAT
+                  help: THEME_ABOUTME.ADMIN.GALERIE_BILD_FORMAT_HILFE
+                  size: medium
+                  default: ''
+                  options:
+                    '': THEME_ABOUTME.ADMIN.GALERIE_BILD_WIE_GALERIE
+                    landscape: THEME_ABOUTME.ADMIN.GALERIE_FORMAT_QUER
+                    portrait: THEME_ABOUTME.ADMIN.GALERIE_FORMAT_HOCH
+                .alt:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.BILDBESCHREIBUNG_ALT_TEXT
+                .credit:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.FOTOGRAF_IN
+                  placeholder: 'Jon Doe'
+            videos_section:
+              type: section
+              title: Videos
+              text: THEME_ABOUTME.ADMIN.DIE_VIDEOS_WERDEN_VERLINKT_NICHT_EINGEBE
+            header.videos_eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DEN_VIDEOS
+              placeholder: Videos
+            header.videos_title:
+              type: text
+              label: THEME_ABOUTME.ADMIN.UEBERSCHRIFT_DER_VIDEOS
+            header.videos:
+              type: list
+              label: Videos
+              style: vertical
+              collapsed: true
+              fields:
+                .uid:
+                  type: hidden
+                .year:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.GROSSE_ZAHL_AUF_DER_KARTE
+                  size: small
+                  placeholder: '2026'
+                .label:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.KLEINE_KENNZEICHNUNG
+                  placeholder: 'YouTube · Recap 4K'
+                .title:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.TITEL
+                .text:
+                  type: textarea
+                  label: THEME_ABOUTME.ADMIN.EIN_SATZ_DAZU
+                  rows: 2
+                .url:
+                  type: url
+                  label: THEME_ABOUTME.ADMIN.YOUTUBE_ADRESSE
+                .poster:
+                  type: filepicker
+                  label: THEME_ABOUTME.ADMIN.HINTERGRUNDBILD_OPTIONAL
+                  folder: '@self'
+                  preview_images: true
+                  accept:
+                    - .jpg
+                    - .jpeg
+                    - .png
+                    - .webp

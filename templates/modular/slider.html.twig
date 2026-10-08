@@ -1,0 +1,41 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% set h = page.header %}
+{% set slides = [] %}
+{% for s in h.slides ?? [] %}
+    {% set img = s.image ? page.media[s.image] : null %}
+    {% if img %}{% set slides = slides|merge([s|merge({img: img})]) %}{% endif %}
+{% endfor %}
+{% if slides|length %}
+{# Bild-Slider über die volle Fensterbreite. Ohne JavaScript lassen sich die Bilder seitlich wischen. #}
+<section class="hero-slider" id="{{ h.anchor ?: 'slider' }}" data-carousel data-autoplay="{{ (h.autoplay ?? true) ? (h.interval ?: 6) : 0 }}"
+         aria-roledescription="carousel" aria-label="{{ h.title ?: 'THEME_ABOUTME.SLIDER'|t }}">
+    <div class="hs-track" data-track>
+        {% for s in slides %}
+            {% set big = s.img.width > 2000 ? s.img.cropResize(2000, 2000) : s.img %}
+            {% set link = s.button_url ? (s.button_url starts with '/' ? base_url_relative ~ s.button_url : s.button_url) : '' %}
+            <figure class="hs-slide" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ slides|length }}">
+                <img src="{{ big.url }}" alt="{{ s.alt ?: s.title }}" {{ loop.first ? 'fetchpriority="high"' : 'loading="lazy"' }}>
+                {% if s.title or s.text or (s.button_text and link) %}
+                    <figcaption class="hs-caption hs-shade-{{ s.shade in ['off', 'strong'] ? s.shade : 'light' }}">
+                        <div class="hs-inner">
+                            {% if s.eyebrow %}<span class="eyebrow">{{ s.eyebrow }}</span>{% endif %}
+                            {% if s.title %}<h2>{{ s.title|nh_highlight }}</h2>{% endif %}
+                            {% if s.text %}<p>{{ s.text }}</p>{% endif %}
+                            {% if s.button_text and link %}<a class="btn btn-white" href="{{ link }}">{{ s.button_text }}{{ ic.icon('arrow') }}</a>{% endif %}
+                        </div>
+                    </figcaption>
+                {% endif %}
+            </figure>
+        {% endfor %}
+    </div>
+    {% if slides|length > 1 %}
+        <button class="carousel-btn hs-prev" type="button" data-prev aria-label="{{ 'THEME_ABOUTME.SLIDE_PREV'|t }}">{{ ic.icon('prev') }}</button>
+        <button class="carousel-btn hs-next" type="button" data-next aria-label="{{ 'THEME_ABOUTME.SLIDE_NEXT'|t }}">{{ ic.icon('next') }}</button>
+        <div class="hs-dots" data-dots>
+            {% for s in slides %}
+                <button type="button" data-goto="{{ loop.index0 }}" aria-label="{{ 'THEME_ABOUTME.SLIDE_GOTO'|t }} {{ loop.index }}"></button>
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>
+{% endif %}

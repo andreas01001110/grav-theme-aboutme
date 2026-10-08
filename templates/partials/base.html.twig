@@ -1,0 +1,191 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% set mode = theme_var('mode') ?: 'auto' %}
+{% set brand_name = theme_var('brand.name') ?: site.title %}
+{% set monogram = theme_var('brand.monogram') ?: brand_name|nh_initials %}
+{# Schriften (Themes → AboutME → Darstellung); alle liegen lokal im Theme-Ordner fonts #}
+{% set font_heading = theme_var('font_heading') in ['fraunces', 'playfair', 'sora', 'space'] ? theme_var('font_heading') : 'bricolage' %}
+{% set font_body = theme_var('font_body') in ['inter', 'roboto', 'opensans', 'sourcesans'] ? theme_var('font_body') : 'figtree' %}
+{% set home_page = pages.find(config.system.home.alias) %}
+{# Vorgelagerte Startseite (Themes → AboutME → Startseite): Dann liegt die Profilseite unter ihrer eigenen Adresse #}
+{% set front_on = theme_var('front.enabled') ? true : false %}
+{% set front_route = '/' ~ (theme_var('front.route') ?: 'start')|trim('/') %}
+{% set is_front = front_on and page.route == front_route %}
+{% set about_url = base_url_relative ~ (front_on ? config.system.home.alias : '/') %}
+{% set on_home = page.home %}
+{% set home_link = on_home ? '' : about_url %}
+{# Social-Media-Profile in der im Admin festgelegten Reihenfolge (aus aboutme.php) #}
+{% set socials = nh_socials ?? [] %}
+{# Sprachen: dieselbe Seite in jeder Sprache. Die Standardsprache hat kein Kürzel in der Adresse. #}
+{% set active_lang = grav.language.getActive ?: grav.language.getDefault ?: grav.config.site.default_lang ?: 'de' %}
+{% set default_lang = grav.language.getDefault ?: 'de' %}
+{% if is_front %}
+    {% set route = '/' %}
+{% elseif page.home %}
+    {% set route = front_on ? config.system.home.alias : '/' %}
+{% else %}
+    {% set route = page.route %}
+{% endif %}
+{% set lang_links = [] %}
+{% for lang in grav.language.getLanguages %}
+    {% set prefix = (lang == default_lang and not config.system.languages.include_default_lang) ? '' : '/' ~ lang %}
+    {% set lang_links = lang_links|merge([{code: lang, url: base_url_simple ~ prefix ~ route, active: lang == active_lang}]) %}
+{% endfor %}
+{# Menü: Die Liste unter Themes → AboutME → Menü ist das Menü (Reihenfolge wie im Admin).
+   Nur wenn sie leer ist, entsteht es automatisch: Anker der Startseiten-Bausteine (Feld „Menü“)
+   plus sichtbare Hauptseiten. Der Admin füllt eine leere Liste mit genau diesen Einträgen. #}
+{% set nav_items = [] %}
+{% set custom_nav = theme_var('nav_links') ?: [] %}
+{% for l in custom_nav %}
+    {# Text in der aktiven Sprache (Übersetzungen), sonst Standardtext; text_de/text_en aus älteren Versionen gelten weiter #}
+    {% set label = (l.texts[active_lang] ?? '') ?: (l['text_' ~ active_lang] ?? '') ?: (l.text ?? '') ?: (l['text_' ~ default_lang] ?? '') ?: (l.text_de ?? '') ?: (l.text_en ?? '') %}
+    {% set target = l.url|trim %}
+    {% if label and target %}
+        {% if target starts with '#' %}
+            {% set href = home_link ~ target %}
+            {% set is_active = false %}
+        {% elseif target starts with '/' %}
+            {% set href = base_url_relative ~ (target == '/' ? '/' : target) %}
+            {% set is_active = target != '/' and (page.route == target or page.route starts with (target ~ '/')) %}
+        {% else %}
+            {% set href = target %}
+            {% set is_active = false %}
+        {% endif %}
+        {% set nav_items = nav_items|merge([{label: label, url: href, active: is_active, blank: l.new_tab or (target starts with 'http' and l.new_tab is null)}]) %}
+    {% endif %}
+{% endfor %}
+{% set use_custom = nav_items|length > 0 %}
+{% if not use_custom and home_page %}
+    {% for module in home_page.collection() if module.header.menu %}
+        {% set nav_items = nav_items|merge([{label: module.header.menu, url: home_link ~ '#' ~ (module.header.anchor ?: module.header.menu|hyphenize), active: false}]) %}
+    {% endfor %}
+{% endif %}
+{# Nur Seiten mit Inhaltsdatei, damit leere Ordner nicht im Menü landen #}
+{% if not use_custom %}
+    {% for p in pages.children.visible if not p.home and p.file %}
+        {% set nav_items = nav_items|merge([{label: p.menu, url: p.url, active: (p.active or p.activeChild)}]) %}
+    {% endfor %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="{{ active_lang }}" data-mode-default="{{ mode }}">
+<head>
+{% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>{% if page.title and not page.home and not is_front %}{{ page.title|e }} · {% endif %}{{ site.title|e }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    <meta name="color-scheme" content="light dark">
+    {% set lang_prefix = (active_lang == default_lang and not config.system.languages.include_default_lang) ? '' : '/' ~ active_lang %}
+    <link rel="canonical" href="{{ (is_front or page.home) ? (uri.base ~ base_url_simple ~ lang_prefix ~ route) : page.url(true, true) }}">
+    {% if lang_links|length > 1 %}
+        {% for l in lang_links %}<link rel="alternate" hreflang="{{ l.code }}" href="{{ uri.base ~ l.url }}">
+        {% endfor %}
+    {% endif %}
+    {# Favicon: runder Kreis in den Farben des Farbschemas mit dem Monogramm, ohne eigene Bilddatei #}
+    {% set fav_colors = {petrol: ['#0b4f53', '#137a75'], smaragd: ['#0c6442', '#18905f'], hellblau: ['#175d9c', '#2f88cf'], dunkelblau: ['#172e5e', '#2a4f97'], indigo: ['#30348a', '#4d53bb'], lila: ['#5a338a', '#8355c2'], magenta: ['#8c1d51', '#c23a7a'], hellrot: ['#b13a35', '#dd5e53'], dunkelrot: ['#6f1625', '#9e2c40'], orange: ['#a2470b', '#d8691e'], gelb: ['#7d5200', '#b37a06'], graphit: ['#262f38', '#46535f']} %}
+    {% set fav = fav_colors[theme_var('scheme')] ?? fav_colors.petrol %}
+    {% set fav_size = monogram|length > 2 ? 20 : 26 %}
+    {% set fav_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset=".3" stop-color="' ~ fav[0] ~ '"/><stop offset="1" stop-color="' ~ fav[1] ~ '"/></linearGradient></defs><circle cx="32" cy="32" r="32" fill="url(#g)"/><text x="32" y="41" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="' ~ fav_size ~ '" font-weight="700" fill="#fff">' ~ monogram|e ~ '</text></svg>' %}
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,{{ fav_svg|url_encode }}">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ url('theme://fonts/' ~ font_body ~ '-normal-latin.woff2') }}">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ url('theme://fonts/' ~ font_heading ~ '-normal-latin.woff2') }}">
+    <script>
+    (function () {
+      try {
+        var d = document.documentElement;
+        var pref = localStorage.getItem('nh-theme') || d.getAttribute('data-mode-default') || 'auto';
+        var dark = pref === 'dark' || (pref === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        d.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) {}
+    })();
+    </script>
+{% endblock head %}
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/fonts.css', 100) %}
+    {% do assets.addCss('theme://css/site.css', 90) %}
+{% endblock %}
+{% block javascripts %}
+    {% do assets.addJs('theme://js/site.js', {group: 'bottom', loading: 'defer'}) %}
+{% endblock %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+</head>
+{% set bg_style = theme_var('background') ?: 'mint' %}
+<body class="{{ is_front ? 'is-front' : (page.home ? 'is-home' : 'is-page') }} tpl-{{ page.template }} bg-{{ bg_style }} scheme-{{ theme_var('scheme') ?: 'petrol' }} fh-{{ font_heading }} fb-{{ font_body }}"
+      data-lb-view="{{ 'THEME_ABOUTME.LB_VIEW'|t|e('html_attr') }}"
+      data-lb-close="{{ 'THEME_ABOUTME.LB_CLOSE'|t|e('html_attr') }}"
+      data-lb-prev="{{ 'THEME_ABOUTME.LB_PREV'|t|e('html_attr') }}"
+      data-lb-next="{{ 'THEME_ABOUTME.LB_NEXT'|t|e('html_attr') }}">
+{% if bg_style == 'aurora' %}<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>{% endif %}
+<a class="skip" href="#inhalt">{{ 'THEME_ABOUTME.SKIP'|t }}</a>
+<div class="site">
+    <header class="nav">
+        <a class="brand" href="{{ base_url_relative ~ '/' }}"><span class="monogram" aria-hidden="true">{{ monogram }}</span><span class="brand-name">{{ brand_name }}</span></a>
+        <nav aria-label="{{ 'THEME_ABOUTME.MAIN_NAV'|t|e('html_attr') }}">
+            <ul class="nav-links">
+            {% for item in nav_items %}
+                <li><a href="{{ item.url }}" class="{{ item.active ? 'active' }}"{% if item.active %} aria-current="page"{% endif %}{% if item.blank %} target="_blank" rel="noopener"{% endif %}>{{ item.label }}</a></li>
+            {% endfor %}
+            </ul>
+        </nav>
+        <div class="nav-tools">
+            {# Menüleiste: nur Profile mit "Oben im Menü anzeigen"; Kontaktbereich und Handy-Menü zeigen alle #}
+            {% for s in socials if s.url and (s.menu ?? true) %}
+                <a class="icon-btn social-icon" href="{{ s.url }}" target="_blank" rel="noopener me" aria-label="{{ s.label }}">{{ ic.icon(s.key) }}</a>
+            {% endfor %}
+            {% if lang_links|length > 1 %}
+                <nav class="lang-switch" aria-label="{{ 'THEME_ABOUTME.LANG_NAV'|t|e('html_attr') }}">
+                    {% for l in lang_links %}
+                        <a href="{{ l.url }}" hreflang="{{ l.code }}" lang="{{ l.code }}"{% if l.active %} class="active" aria-current="true"{% endif %}>{{ l.code|upper }}</a>
+                    {% endfor %}
+                </nav>
+            {% endif %}
+            {% if theme_var('mode_toggle') %}
+                <button class="icon-btn mode-toggle" type="button" data-mode-toggle aria-label="{{ 'THEME_ABOUTME.MODE_TOGGLE'|t|e('html_attr') }}"><span class="i-moon">{{ ic.icon('moon') }}</span><span class="i-sun">{{ ic.icon('sun') }}</span></button>
+            {% endif %}
+            <button class="icon-btn nav-burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="{{ 'THEME_ABOUTME.MENU_OPEN'|t|e('html_attr') }}">{{ ic.icon('menu') }}</button>
+            <a class="nav-cta" href="{{ home_link }}#kontakt">{{ 'THEME_ABOUTME.CONTACT'|t }}</a>
+        </div>
+    </header>
+    <div class="mobile-panel" id="mobile-menu">
+        <ul>
+        {% for item in nav_items %}
+            <li><a href="{{ item.url }}" class="{{ item.active ? 'active' }}"{% if item.blank %} target="_blank" rel="noopener"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+            <li><a href="{{ home_link }}#kontakt">{{ 'THEME_ABOUTME.CONTACT'|t }}</a></li>
+        </ul>
+        {% if lang_links|length > 1 %}
+            <nav class="lang-switch mobile-lang" aria-label="{{ 'THEME_ABOUTME.LANG_NAV'|t|e('html_attr') }}">
+                {% for l in lang_links %}
+                    <a href="{{ l.url }}" hreflang="{{ l.code }}" lang="{{ l.code }}"{% if l.active %} class="active" aria-current="true"{% endif %}>{{ l.code|upper }}</a>
+                {% endfor %}
+            </nav>
+        {% endif %}
+        <div class="mobile-social">
+        {% for s in socials if s.url %}
+            <a class="icon-btn" href="{{ s.url }}" target="_blank" rel="noopener me" aria-label="{{ s.label }}">{{ ic.icon(s.key) }}</a>
+        {% endfor %}
+        </div>
+    </div>
+
+    <main id="inhalt">
+    {% block body %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <span>© {{ 'now'|date('Y') }} {{ theme_var('footer.text') ?: brand_name }}</span>
+        {# Rechtliche Seiten: eingestellte Adresse; gibt es sie nicht, die übliche englische bzw. deutsche #}
+        {% set imp = theme_var('footer.impressum') %}
+        {% if imp and not pages.find(imp) %}{% set imp = pages.find('/imprint') ? '/imprint' : (pages.find('/impressum') ? '/impressum' : imp) %}{% endif %}
+        {% set priv = theme_var('footer.datenschutz') %}
+        {% if priv and not pages.find(priv) %}{% set priv = pages.find('/privacy') ? '/privacy' : (pages.find('/datenschutz') ? '/datenschutz' : priv) %}{% endif %}
+        <nav aria-label="{{ 'THEME_ABOUTME.LEGAL_NAV'|t|e('html_attr') }}">
+            {% if imp %}<a href="{{ base_url_relative ~ imp }}">{{ 'THEME_ABOUTME.IMPRESSUM'|t }}</a>{% endif %}
+            {% if priv %}<a href="{{ base_url_relative ~ priv }}">{{ 'THEME_ABOUTME.PRIVACY'|t }}</a>{% endif %}
+        </nav>
+    </footer>
+</div>
+{{ assets.js('bottom')|raw }}
+</body>
+</html>

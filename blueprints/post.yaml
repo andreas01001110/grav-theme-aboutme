@@ -1,0 +1,35 @@
+title: 'Beitrag (Artikel oder News)'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_post:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.BEITRAG
+          ordering@: 1
+          fields:
+            post_info:
+              type: section
+              text: THEME_ABOUTME.ADMIN.DAS_DATUM_STELLST_DU_IM_REITER_OPTIONEN
+            header.teaser:
+              type: textarea
+              label: THEME_ABOUTME.ADMIN.KURZTEXT
+              rows: 3
+              help: THEME_ABOUTME.ADMIN.ERSCHEINT_AUF_DER_STARTSEITE_UND_UNTER_D
+            header.image:
+              type: filepicker
+              label: THEME_ABOUTME.ADMIN.BILD
+              folder: '@self'
+              preview_images: true
+              accept:
+                - .jpg
+                - .jpeg
+                - .png
+                - .webp
+            header.image_alt:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BILDBESCHREIBUNG_ALT_TEXT
+            header.image_credit:
+              type: text
+              label: THEME_ABOUTME.ADMIN.FOTOGRAF_IN_OPTIONAL

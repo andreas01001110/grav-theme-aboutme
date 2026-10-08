@@ -1,0 +1,24 @@
+enabled: true
+brand:
+  name: ''
+  monogram: ''
+mode: auto
+scheme: petrol
+background: mint
+font_heading: bricolage
+font_body: figtree
+mode_toggle: true
+front:
+  enabled: false
+  route: /start
+  sections:
+    slider: true
+    teaser: true
+    articles: true
+    news: true
+    contact: true
+social_links: []
+footer:
+  text: ''
+  impressum: '/impressum'
+  datenschutz: '/datenschutz'

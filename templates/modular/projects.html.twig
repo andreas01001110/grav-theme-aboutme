@@ -1,0 +1,53 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% set h = page.header %}
+<section class="section" id="{{ h.anchor ?: 'projekte' }}">
+    <div class="section-head">
+        {% if h.eyebrow %}<span class="eyebrow">{{ h.eyebrow }}</span>{% endif %}
+        <h2>{{ h.title }}</h2>
+        {% if content|trim %}<div class="intro">{{ content|raw }}</div>{% endif %}
+    </div>
+    <div class="projects">
+        {% for p in h.projects %}
+            {% set image = p.image ? page.media[p.image] : null %}
+            {# Links: eigene Seiten (/…) in der aktiven Sprache und im selben Tab, externe in neuem Tab #}
+            {% set links = [] %}
+            {% for n in [1, 2] %}
+                {% set l_text = p['link' ~ n ~ '_text'] ?? '' %}
+                {% set l_url = (p['link' ~ n ~ '_url'] ?? '')|trim %}
+                {% if l_text and l_url %}
+                    {% set internal = l_url starts with '/' %}
+                    {% set links = links|merge([{text: l_text, url: internal ? base_url_relative ~ l_url : l_url, internal: internal}]) %}
+                {% endif %}
+            {% endfor %}
+            <article class="project lift">
+                <div class="preview{{ image ? ' has-image' }}">
+                    {% if image %}
+                        {# Nur verkleinern, nie hochrechnen; der Ausschnitt (16:9, oben bündig) entsteht per CSS #}
+                        {% set shot = image.width > 1200 ? image.cropResize(1200, 1200) : image %}
+                        <img src="{{ shot.url }}" alt="{{ p.image_alt ?: ('THEME_ABOUTME.SCREENSHOT'|t) ~ ' ' ~ p.title }}" width="{{ shot.width }}" height="{{ shot.height }}" loading="lazy">
+                    {% elseif p.preview == 'web' %}
+                        <div class="mini-web" aria-hidden="true"><div class="tb"></div><div class="fp"><i class="st"></i><i></i><i class="hl"></i><i></i><i></i><i class="st"></i><i></i><i></i><i class="hl"></i><i></i><i></i><i></i></div></div>
+                    {% else %}
+                        <div class="mini-phone" aria-hidden="true"><i class="head"></i><i></i><i class="fav"></i><i></i><i></i><i class="fav"></i><i></i><i></i></div>
+                    {% endif %}
+                    {% if links|length %}
+                        <a class="icon-btn" href="{{ links|first.url }}"{% if not links|first.internal %} target="_blank" rel="noopener"{% endif %} aria-label="{{ p.title }}: {{ links|first.text }}">{{ ic.icon('arrow') }}</a>
+                    {% endif %}
+                </div>
+                <div class="pbody">
+                    <ul class="ptags">
+                        {% for t in p.tags|nh_list %}<li>{{ t }}</li>{% endfor %}
+                        {% if p.ai %}<li class="ai">{{ 'THEME_ABOUTME.AI_BUILT'|t }}</li>{% endif %}
+                    </ul>
+                    <h3>{{ p.title }}</h3>
+                    {{ p.text|markdown|raw }}
+                    {% if links|length %}
+                        <div class="plinks">
+                            {% for l in links %}<a class="pill-link" href="{{ l.url }}"{% if not l.internal %} target="_blank" rel="noopener"{% endif %}>{{ l.text }}{{ ic.icon('arrow') }}</a>{% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>

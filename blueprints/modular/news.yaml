@@ -1,0 +1,38 @@
+title: 'News (Slider)'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_news:
+          type: tab
+          title: News
+          ordering@: 0
+          fields:
+            news_info:
+              type: section
+              text: THEME_ABOUTME.ADMIN.ZEIGT_DIE_NEUESTEN_MELDUNGEN_AUS_DEM_ANG
+            header.anchor:
+              type: text
+              label: THEME_ABOUTME.ADMIN.SPRUNGMARKE
+              size: medium
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT
+            header.source:
+              type: text
+              label: THEME_ABOUTME.ADMIN.ORDNER_DER_MELDUNGEN
+              size: medium
+              default: /news
+            header.limit:
+              type: number
+              label: THEME_ABOUTME.ADMIN.HOECHSTENS_ANZEIGEN
+              size: x-small
+              default: 6
+              validate:
+                min: 1
+                max: 12
+            header.all_text:
+              type: text
+              label: THEME_ABOUTME.ADMIN.LINK_ALLE_NEWS_OPTIONAL
+              placeholder: THEME_ABOUTME.ADMIN.ALLE_NEWS

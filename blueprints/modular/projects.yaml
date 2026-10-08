@@ -1,0 +1,80 @@
+title: Projekte
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_projects:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.PROJEKTE
+          ordering@: 0
+          fields:
+            header.anchor:
+              type: text
+              label: THEME_ABOUTME.ADMIN.SPRUNGMARKE
+              size: medium
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT
+            header.projects:
+              type: list
+              label: THEME_ABOUTME.ADMIN.PROJEKTE
+              style: vertical
+              collapsed: true
+              fields:
+                .uid:
+                  type: hidden
+                .title:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.TITEL
+                .tags:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.SCHLAGWORTE
+                  description: THEME_ABOUTME.ADMIN.MIT_KOMMA_GETRENNT_Z_B_ANDROID_PWA
+                .ai:
+                  type: toggle
+                  label: THEME_ABOUTME.ADMIN.SCHLAGWORT_KI_GESTUETZT_ENTWICKELT_ANZEI
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+                .text:
+                  type: textarea
+                  label: THEME_ABOUTME.ADMIN.BESCHREIBUNG
+                  rows: 4
+                .image:
+                  type: filepicker
+                  label: 'Screenshot (optional)'
+                  folder: '@self'
+                  preview_images: true
+                  accept:
+                    - .jpg
+                    - .jpeg
+                    - .png
+                    - .webp
+                  description: THEME_ABOUTME.ADMIN.QUERFORMAT_IDEAL_960_420_PIXEL_OHNE_BILD
+                .image_alt:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.BILDBESCHREIBUNG_ALT_TEXT
+                .preview:
+                  type: select
+                  label: THEME_ABOUTME.ADMIN.GRAFIK_OHNE_SCREENSHOT
+                  default: phone
+                  options:
+                    phone: Smartphone
+                    web: THEME_ABOUTME.ADMIN.BROWSERFENSTER
+                .link1_text:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.LINK_1_TEXT
+                .link1_url:
+                  type: url
+                  label: THEME_ABOUTME.ADMIN.LINK_1_ADRESSE
+                .link2_text:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.LINK_2_TEXT_OPTIONAL
+                .link2_url:
+                  type: url
+                  label: THEME_ABOUTME.ADMIN.LINK_2_ADRESSE_OPTIONAL

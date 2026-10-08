@@ -1,0 +1,29 @@
+title: Kontakt
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_contact:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.KONTAKT
+          ordering@: 0
+          fields:
+            header.anchor:
+              type: text
+              label: THEME_ABOUTME.ADMIN.SPRUNGMARKE
+              size: medium
+              default: kontakt
+              help: THEME_ABOUTME.ADMIN.DER_KONTAKT_BUTTON_IN_DER_MENUELEISTE_SP
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT
+            header.button_text:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BUTTON_TEXT
+              placeholder: THEME_ABOUTME.ADMIN.NACHRICHT_SCHREIBEN
+            header.button_url:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BUTTON_ZIEL
+              placeholder: /contact
+              help: THEME_ABOUTME.ADMIN.LEER_LASSEN_FUER_DIE_SEITE_MIT_DEM_KONTA

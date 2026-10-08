@@ -1,0 +1,56 @@
+title: 'Stationen (Zeitstrahl)'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_timeline:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.ZEITSTRAHL
+          ordering@: 0
+          fields:
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT
+            header.entries:
+              type: list
+              label: THEME_ABOUTME.ADMIN.EINTRAEGE_VON_OBEN_NACH_UNTEN
+              style: vertical
+              collapsed: true
+              fields:
+                .uid:
+                  type: hidden
+                .period:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.ZEITRAUM
+                  placeholder: THEME_ABOUTME.ADMIN.SEIT_2016_ODER_2010_2016
+                .title:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.TITEL
+                .category:
+                  type: select
+                  label: THEME_ABOUTME.ADMIN.KATEGORIE
+                  default: Beruf
+                  options:
+                    Beruf: THEME_ABOUTME.ADMIN.BERUF
+                    Ehrenamt: THEME_ABOUTME.ADMIN.EHRENAMT
+                    Weiterbildung: THEME_ABOUTME.ADMIN.WEITERBILDUNG
+                    Studium: THEME_ABOUTME.ADMIN.STUDIUM
+                    Projekt: THEME_ABOUTME.ADMIN.PROJEKT
+                .current:
+                  type: toggle
+                  label: THEME_ABOUTME.ADMIN.LAEUFT_AKTUELL
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+                .place:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.ORT_ORGANISATION
+                .text:
+                  type: textarea
+                  label: THEME_ABOUTME.ADMIN.EIN_SATZ_DAZU_OPTIONAL
+                  rows: 2

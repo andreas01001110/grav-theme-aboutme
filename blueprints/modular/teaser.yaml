@@ -1,0 +1,59 @@
+title: 'Über-mich-Teaser (Bild und Text)'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_teaser:
+          type: tab
+          title: Teaser
+          ordering@: 0
+          fields:
+            teaser_info:
+              type: section
+              text: THEME_ABOUTME.ADMIN.UEBERSCHRIFT_FELD_TITEL_TEXTAUSZUG_TEXTF
+            header.anchor:
+              type: text
+              label: THEME_ABOUTME.ADMIN.SPRUNGMARKE
+              size: medium
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT
+            header.image:
+              type: filepicker
+              label: THEME_ABOUTME.ADMIN.BILD
+              folder: '@self'
+              preview_images: true
+              accept:
+                - .jpg
+                - .jpeg
+                - .png
+                - .webp
+            header.image_alt:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BILDBESCHREIBUNG_ALT_TEXT
+            header.image_side:
+              type: toggle
+              label: THEME_ABOUTME.ADMIN.BILD_STEHT
+              highlight: left
+              default: left
+              options:
+                left: THEME_ABOUTME.ADMIN.LINKS
+                right: THEME_ABOUTME.ADMIN.RECHTS
+            header.text_align:
+              type: toggle
+              label: THEME_ABOUTME.ADMIN.TEXT_NEBEN_DEM_BILD
+              highlight: center
+              default: center
+              options:
+                center: THEME_ABOUTME.ADMIN.MITTIG
+                top: THEME_ABOUTME.ADMIN.OBEN
+            header.button_text:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BUTTON_TEXT
+              placeholder: THEME_ABOUTME.ADMIN.MEHR_UEBER_MICH
+            header.button_url:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BUTTON_ZIEL
+              placeholder: /about
+              help: THEME_ABOUTME.ADMIN.LEER_LASSEN_FUER_DIE_PROFILSEITE

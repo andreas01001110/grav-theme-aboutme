@@ -1,0 +1,24 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% set h = page.header %}
+{# Ohne Angabe: Seite /contact, sonst /kontakt #}
+{% set button_url = h.button_url ?: (page.find('/contact') ? '/contact' : '/kontakt') %}
+{% set button_url = button_url starts with '/' ? base_url_relative ~ button_url : button_url %}
+{% set socials = nh_socials ?? [] %}
+<section class="contact" id="{{ h.anchor ?: 'kontakt' }}">
+    <div>
+        {% if h.eyebrow %}<span class="eyebrow">{{ h.eyebrow }}</span>{% endif %}
+        <h2>{{ h.title }}</h2>
+        {% if content|trim %}<div class="ctext">{{ content|raw }}</div>{% endif %}
+    </div>
+    <div class="contact-side">
+        <a class="btn btn-white" href="{{ button_url }}">{{ h.button_text ?: 'THEME_ABOUTME.WRITE_MESSAGE'|t }}{{ ic.icon('arrow') }}</a>
+        {% if socials|length %}
+        {# Bis 4 Profile im 2er-Raster, ab 5 im 3er-Raster #}
+        <ul class="social{{ socials|length > 4 ? ' social-many' }}">
+            {% for s in socials %}
+                <li><a href="{{ s.url }}" target="_blank" rel="noopener me">{{ ic.icon(s.key) }}{{ s.label }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</section>

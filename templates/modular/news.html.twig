@@ -1,0 +1,27 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% import 'macros/posts.html.twig' as posts %}
+{% set h = page.header %}
+{% set source = page.find(h.source ?: '/news') %}
+{% set items = source ? source.children.published.order('date', 'desc').slice(0, h.limit ?: 6) : [] %}
+{% if items|length %}
+{# News-Slider: am Computer bis zu drei Karten nebeneinander, weitere per Pfeil oder Wischen #}
+<section class="section news-section" id="{{ h.anchor ?: 'news' }}" data-carousel data-autoplay="0" aria-roledescription="carousel" aria-label="{{ h.title }}">
+    <div class="section-head section-head-row">
+        <div>
+            {% if h.eyebrow %}<span class="eyebrow">{{ h.eyebrow }}</span>{% endif %}
+            <h2>{{ h.title }}</h2>
+            {% if content|trim %}<div class="intro">{{ content|raw }}</div>{% endif %}
+        </div>
+        <div class="news-tools">
+            {% if items|length > 3 %}
+                <button class="icon-btn" type="button" data-prev aria-label="{{ 'THEME_ABOUTME.NEWS_PREV'|t }}">{{ ic.icon('prev') }}</button>
+                <button class="icon-btn" type="button" data-next aria-label="{{ 'THEME_ABOUTME.NEWS_NEXT'|t }}">{{ ic.icon('next') }}</button>
+            {% endif %}
+            {% if h.all_text and source.routable %}<a class="pill-link" href="{{ source.url }}">{{ h.all_text }}{{ ic.icon('arrow') }}</a>{% endif %}
+        </div>
+    </div>
+    <div class="news-track" data-track>
+        {% for post in items %}<div class="news-slide">{{ posts.news(post) }}</div>{% endfor %}
+    </div>
+</section>
+{% endif %}

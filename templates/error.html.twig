@@ -1,0 +1,10 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <div class="page-head">
+        <div class="eyebrow">{{ 'THEME_ABOUTME.ERROR'|t }} {{ page.header.http_response_code }}</div>
+        <h1>{{ 'THEME_ABOUTME.ERROR_TITLE'|t }}</h1>
+        <p class="lead">{{ 'THEME_ABOUTME.ERROR_TEXT'|t }}</p>
+        <div class="actions"><a class="btn btn-primary" href="{{ base_url_relative ~ '/' }}">{{ 'THEME_ABOUTME.TO_HOME'|t }}</a></div>
+    </div>
+{% endblock %}

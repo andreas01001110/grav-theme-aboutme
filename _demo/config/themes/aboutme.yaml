@@ -1,0 +1,32 @@
+enabled: true
+brand:
+  name: 'Jon Doe'
+  monogram: JD
+mode: auto
+scheme: lila
+background: aurora
+mode_toggle: true
+front:
+  enabled: true
+  route: /start
+nav_links: []
+social_links:
+  -
+    network: instagram
+    url: 'https://www.instagram.com/'
+  -
+    network: youtube
+    url: 'https://www.youtube.com/'
+  -
+    network: pinterest
+    url: 'https://www.pinterest.com/'
+  -
+    network: mastodon
+    url: 'https://mastodon.social/'
+  -
+    network: bluesky
+    url: 'https://bsky.app/'
+footer:
+  text: 'Jon Doe · Beispielstadt'
+  impressum: /imprint
+  datenschutz: /privacy

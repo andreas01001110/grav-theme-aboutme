@@ -1,0 +1,86 @@
+{% extends 'default.html.twig' %}
+
+{% block content %}
+    {% import 'macros/icons.html.twig' as ic %}
+    {{ parent() }}
+    {% set h = page.header %}
+    {# Galerie: Bilder aus der Standardsprache erscheinen in allen Sprachen (aboutme.php, galleryFor) #}
+    {% set gal = nh_gallery(page) %}
+
+    {% if gal.items %}
+    <section class="section gallery-section">
+        <div class="section-head">
+            {% if h.gallery_eyebrow %}<span class="eyebrow">{{ h.gallery_eyebrow }}</span>{% endif %}
+            {% if h.gallery_title %}<h2>{{ h.gallery_title }}</h2>{% endif %}
+        </div>
+        {# Format der Galerie: quer (3:2, Fotos) oder hochkant (Handy-Screenshots). Jedes Bild kann davon
+           abweichen (Feld „Format“ am Bild). Der Ausschnitt entsteht per CSS; die Vorschaubilder werden nur
+           verkleinert. Animierte GIFs bleiben unverändert, sonst ginge die Animation verloren. #}
+        {% set portrait = gal.format == 'portrait' %}
+        <ul class="gallery{{ portrait ? ' gallery-portrait' }}">
+            {% for g in gal.items %}
+                {% set img = g.image ? page.media[g.image] : null %}
+                {% if img %}
+                    {% set is_gif = g.image|lower ends with '.gif' %}
+                    {% set g_fmt = g.format in ['landscape', 'portrait'] ? g.format : (portrait ? 'portrait' : 'landscape') %}
+                    {% set mixed = (g_fmt == 'portrait') != portrait %}
+                    {# Wichtig: Grav nutzt für ein Bild immer dasselbe Objekt. Verkleinerungen wirken darauf, bis .url
+                       aufgerufen wird. Deshalb jede Fassung sofort in eine Adresse umwandeln: zuerst die Großansicht
+                       (Original, höchstens 2000 px), danach getrennt die Vorschau. #}
+                    {% set w = img.width ?: 1 %}
+                    {% set hgt = img.height ?: 1 %}
+                    {% if is_gif %}
+                        {% set large_url = img.url %}
+                        {% set thumb_url = large_url %}
+                        {% set tw = w %}
+                        {% set th = hgt %}
+                    {% else %}
+                        {% set large_url = (w > 2000 or hgt > 2000) ? img.cropResize(2000, 2000).url : img.url %}
+                        {% set max_w = g_fmt == 'portrait' ? 700 : 1200 %}
+                        {% set max_h = g_fmt == 'portrait' ? 1600 : 1200 %}
+                        {% set scale = min(1, max_w / w, max_h / hgt) %}
+                        {% set tw = (w * scale)|round %}
+                        {% set th = (hgt * scale)|round %}
+                        {% set thumb_url = scale < 1 ? img.cropResize(max_w, max_h).url : img.url %}
+                    {% endif %}
+                    {% set caption = g.alt ~ (g.credit ? ' · ' ~ 'THEME_ABOUTME.PHOTO'|t ~ ': ' ~ g.credit : '') %}
+                    <li{% if mixed %} class="g-{{ g_fmt }}"{% endif %}>
+                        <a href="{{ large_url }}" data-lightbox="galerie" data-caption="{{ caption }}">
+                            <img src="{{ thumb_url }}" alt="{{ g.alt }}" width="{{ tw }}" height="{{ th }}" loading="lazy">
+                            {% if g.credit %}<span class="credit">{{ 'THEME_ABOUTME.PHOTO'|t }}: {{ g.credit }}</span>{% endif %}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    {% if h.videos %}
+    <section class="section">
+        <div class="section-head">
+            {% if h.videos_eyebrow %}<span class="eyebrow">{{ h.videos_eyebrow }}</span>{% endif %}
+            {% if h.videos_title %}<h2>{{ h.videos_title }}</h2>{% endif %}
+        </div>
+        <div class="videos">
+            {% for v in h.videos if v.url %}
+                {% set poster = v.poster ? page.media[v.poster] : null %}
+                <a class="video-card lift" href="{{ v.url }}" target="_blank" rel="noopener">
+                    <div class="video-poster{{ poster ? ' has-image' }}">
+                        {% if poster %}<img src="{{ (poster.width > 1280 ? poster.cropZoom(1280, 720) : poster).url }}" alt="" loading="lazy">{% endif %}
+                        {% if v.label %}<span class="video-label">{{ v.label }}</span>{% endif %}
+                        {% if v.year %}<span class="video-year" aria-hidden="true">{{ v.year }}</span>{% endif %}
+                        <span class="video-play" aria-hidden="true">{{ ic.icon('play') }}</span>
+                    </div>
+                    <div class="video-body">
+                        <h3>{{ v.title }}</h3>
+                        {% if v.text %}<p>{{ v.text }}</p>{% endif %}
+                        <span class="pill-link">{{ 'THEME_ABOUTME.WATCH_YOUTUBE'|t }}{{ ic.icon('arrow') }}</span>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <p class="video-note">{{ 'THEME_ABOUTME.VIDEO_NOTE'|t }}</p>
+    </section>
+    {% endif %}
+{% endblock %}

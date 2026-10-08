@@ -1,0 +1,60 @@
+title: Artikel
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_articles:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.ARTIKEL
+          ordering@: 0
+          fields:
+            articles_info:
+              type: section
+              text: THEME_ABOUTME.ADMIN.ZEIGT_DIE_NEUESTEN_ARTIKEL_AUS_DEM_ANGEG
+            header.anchor:
+              type: text
+              label: THEME_ABOUTME.ADMIN.SPRUNGMARKE
+              size: medium
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT
+            header.source:
+              type: text
+              label: THEME_ABOUTME.ADMIN.ORDNER_DER_ARTIKEL
+              size: medium
+              placeholder: /articles
+            header.limit:
+              type: number
+              label: THEME_ABOUTME.ADMIN.ANZAHL
+              size: x-small
+              default: 2
+              validate:
+                min: 1
+                max: 12
+            header.show_date:
+              type: toggle
+              label: THEME_ABOUTME.ADMIN.DATUM_ANZEIGEN
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+            header.text_align:
+              type: toggle
+              label: THEME_ABOUTME.ADMIN.TEXT_NEBEN_DEM_BILD
+              highlight: center
+              default: center
+              options:
+                center: THEME_ABOUTME.ADMIN.MITTIG
+                top: THEME_ABOUTME.ADMIN.OBEN
+            header.button_text:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BUTTON_TEXT_JE_ARTIKEL
+              placeholder: THEME_ABOUTME.ADMIN.WEITERLESEN
+            header.all_text:
+              type: text
+              label: THEME_ABOUTME.ADMIN.LINK_ALLE_ARTIKEL_OPTIONAL
+              placeholder: THEME_ABOUTME.ADMIN.ALLE_ARTIKEL

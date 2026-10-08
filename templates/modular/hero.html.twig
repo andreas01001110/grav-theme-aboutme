@@ -1,0 +1,45 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% set h = page.header %}
+{% set photo = h.photo ? page.media[h.photo] : null %}
+<section class="hero{{ h.photo_side == 'left' ? ' hero-photo-left' }}" id="{{ h.anchor ?: 'start' }}">
+    <div>
+        {% if h.status %}<div class="status"><span class="dot" aria-hidden="true"></span>{{ h.status }}</div>{% endif %}
+        <h1>{{ h.headline|nh_highlight }}</h1>
+        {% if content|trim %}<div class="lead">{{ content|raw }}</div>{% endif %}
+        {% if h.buttons %}
+        <div class="actions">
+            {% for b in h.buttons if b.text and b.url %}
+                {% set href = b.url starts with '/' ? base_url_relative ~ b.url : b.url %}
+                <a class="btn {{ b.style == 'ghost' ? 'btn-ghost' : 'btn-primary' }}" href="{{ href }}">{{ b.text }}{% if b.style != 'ghost' %}{{ ic.icon('arrow') }}{% endif %}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <div class="visual">
+        <div class="portrait">
+            {% if photo %}
+                {# Große Fotos auf 720 × 900 zuschneiden, kleinere nicht hochrechnen #}
+                {% set portrait = photo.width >= 720 ? photo.cropZoom(720, 900) : photo %}
+                <img src="{{ portrait.url }}" alt="{{ h.photo_alt ?: theme_var('brand.name') }}" width="{{ portrait.width ?: 720 }}" height="{{ portrait.height ?: 900 }}">
+            {% else %}
+                <span aria-hidden="true">{{ theme_var('brand.monogram') ?: (theme_var('brand.name') ?: site.title)|nh_initials }}</span>
+            {% endif %}
+        </div>
+        {# Infokarten: je eine oben und unten, Seite wählbar. Ältere Seiten mit der Liste "badges" funktionieren weiter. #}
+        {% set legacy = h.badges ?: [] %}
+        {% set cards = [
+            {pos: 'top', data: h.badge_top ?: (legacy[0] ?? {}), side: h.badge_top.side ?? 'right'},
+            {pos: 'bottom', data: h.badge_bottom ?: (legacy[1] ?? {}), side: h.badge_bottom.side ?? 'left'}
+        ] %}
+        {% for c in cards if c.data.label or c.data.value %}
+            <div class="float float-{{ c.pos }} float-{{ c.side == 'left' ? 'left' : 'right' }}">{% if c.data.label %}<p>{{ c.data.label }}</p>{% endif %}<b>{{ c.data.value }}</b></div>
+        {% endfor %}
+    </div>
+</section>
+{% if h.stats %}
+<div class="stats">
+    {% for stat in h.stats %}
+        <div class="stat"><p class="stat-value">{{ stat.value }}</p><p>{{ stat.label }}</p></div>
+    {% endfor %}
+</div>
+{% endif %}

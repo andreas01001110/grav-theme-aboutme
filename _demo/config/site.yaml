@@ -1,0 +1,7 @@
+title: 'Jon Doe'
+default_lang: de
+author:
+  name: 'Jon Doe'
+  email: 'demo@example.com'
+metadata:
+    description: 'Jon Doe, Maler und Installationskünstler aus Beispielstadt (fiktive Demo-Person für das Theme AboutME).'

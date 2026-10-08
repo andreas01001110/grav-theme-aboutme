@@ -1,0 +1,30 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <div class="page-head">
+        {% if page.parent and not page.parent.root %}
+            <div class="crumbs"><a href="{{ page.parent.url }}">{{ page.parent.menu }}</a> / {{ page.menu }}</div>
+        {% elseif page.header.eyebrow %}
+            <div class="eyebrow">{{ page.header.eyebrow }}</div>
+        {% endif %}
+        <h1>{{ page.title }}</h1>
+        {% if page.header.lead %}<p class="lead">{{ page.header.lead }}</p>{% endif %}
+    </div>
+    <article class="prose">
+        {{ page.content|raw }}
+        {% if page.header.link_url %}
+            {% import 'macros/icons.html.twig' as ic %}
+            {% set logo = page.header.link_logo ? page.media[page.header.link_logo] : null %}
+            <a class="org-card" href="{{ page.header.link_url }}" target="_blank" rel="noopener">
+                {# Quadratische Logos (z. B. App-Symbole) kompakt, breite Logos in voller Breite #}
+                {% set square = logo and not (page.header.link_logo|lower ends with '.svg') and logo.width and logo.width == logo.height %}
+                {% if logo %}<span class="org-logo{{ square ? ' org-logo-square' }}"><img src="{{ logo.url }}" alt="{{ page.header.link_logo_alt ?: 'THEME_ABOUTME.LOGO'|t }}"></span>{% endif %}
+                <span class="org-text">
+                    {% if page.header.link_label %}<small>{{ page.header.link_label }}</small>{% endif %}
+                    <b>{{ page.header.link_text ?: page.header.link_url }}</b>
+                </span>
+                <span class="icon-btn org-arrow" aria-hidden="true">{{ ic.icon('arrow') }}</span>
+            </a>
+        {% endif %}
+    </article>
+{% endblock %}

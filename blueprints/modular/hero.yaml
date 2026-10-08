@@ -1,0 +1,115 @@
+title: Kopfbereich
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_hero:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.KOPFBEREICH
+          ordering@: 0
+          fields:
+            header.status:
+              type: text
+              label: THEME_ABOUTME.ADMIN.STATUSZEILE
+              help: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_MIT_ORANGEM_PUNKT_UEBER_DER
+              placeholder: THEME_ABOUTME.ADMIN.PH_STATUS
+            header.headline:
+              type: textarea
+              label: THEME_ABOUTME.ADMIN.UEBERSCHRIFT
+              rows: 2
+              description: THEME_ABOUTME.ADMIN.TEXT_ZWISCHEN_ZWEI_GLEICHHEITSZEICHEN_WI
+            header.photo:
+              type: filepicker
+              label: THEME_ABOUTME.ADMIN.FOTO
+              folder: '@self'
+              preview_images: true
+              accept:
+                - .jpg
+                - .jpeg
+                - .png
+                - .webp
+              description: THEME_ABOUTME.ADMIN.BILD_ZUERST_IM_REITER_INHALT_UNTER_MEDIE
+            header.photo_alt:
+              type: text
+              label: THEME_ABOUTME.ADMIN.BILDBESCHREIBUNG_ALT_TEXT
+              placeholder: THEME_ABOUTME.ADMIN.PH_PHOTO_ALT
+            header.photo_side:
+              type: toggle
+              label: THEME_ABOUTME.ADMIN.FOTO_SEITE
+              help: THEME_ABOUTME.ADMIN.FOTO_SEITE_HILFE
+              highlight: right
+              default: right
+              options:
+                left: THEME_ABOUTME.ADMIN.LINKS
+                right: THEME_ABOUTME.ADMIN.RECHTS
+            header.buttons:
+              type: list
+              label: Buttons
+              style: vertical
+              fields:
+                .uid:
+                  type: hidden
+                .text:
+                  type: text
+                  label: Text
+                .url:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.ZIEL
+                  placeholder: THEME_ABOUTME.ADMIN.PROJEKTE_ODER_STATIONEN
+                .style:
+                  type: select
+                  label: THEME_ABOUTME.ADMIN.STIL
+                  default: primary
+                  options:
+                    primary: THEME_ABOUTME.ADMIN.GEFUELLT
+                    ghost: THEME_ABOUTME.ADMIN.UMRANDET
+            badges_section:
+              type: section
+              title: THEME_ABOUTME.ADMIN.INFOKARTEN_AM_FOTO
+              text: THEME_ABOUTME.ADMIN.JE_EINE_KARTE_OBEN_UND_UNTEN_AM_FOTO_DIE
+            header.badge_top.label:
+              type: text
+              label: THEME_ABOUTME.ADMIN.OBEN_KLEINE_ZEILE
+              placeholder: THEME_ABOUTME.ADMIN.PH_BADGE_TOP_LABEL
+            header.badge_top.value:
+              type: text
+              label: THEME_ABOUTME.ADMIN.OBEN_WERT
+              placeholder: THEME_ABOUTME.ADMIN.PH_BADGE_TOP_VALUE
+            header.badge_top.side:
+              type: toggle
+              label: THEME_ABOUTME.ADMIN.OBEN_SEITE
+              highlight: right
+              default: right
+              options:
+                left: THEME_ABOUTME.ADMIN.LINKS
+                right: THEME_ABOUTME.ADMIN.RECHTS
+            header.badge_bottom.label:
+              type: text
+              label: THEME_ABOUTME.ADMIN.UNTEN_KLEINE_ZEILE
+              placeholder: THEME_ABOUTME.ADMIN.ZERTIFIZIERT
+            header.badge_bottom.value:
+              type: text
+              label: THEME_ABOUTME.ADMIN.UNTEN_WERT
+              placeholder: THEME_ABOUTME.ADMIN.PH_BADGE_BOTTOM_VALUE
+            header.badge_bottom.side:
+              type: toggle
+              label: THEME_ABOUTME.ADMIN.UNTEN_SEITE
+              highlight: left
+              default: left
+              options:
+                left: THEME_ABOUTME.ADMIN.LINKS
+                right: THEME_ABOUTME.ADMIN.RECHTS
+            header.stats:
+              type: list
+              label: THEME_ABOUTME.ADMIN.KENNZAHLEN_UNTER_DEM_KOPFBEREICH
+              style: vertical
+              fields:
+                .uid:
+                  type: hidden
+                .value:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.ZAHL
+                .label:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.BESCHREIBUNG

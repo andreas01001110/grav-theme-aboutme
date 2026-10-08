@@ -1,0 +1,80 @@
+title: 'Bild-Slider (volle Breite)'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_slider:
+          type: tab
+          title: Slider
+          ordering@: 0
+          fields:
+            slider_info:
+              type: section
+              text: THEME_ABOUTME.ADMIN.BILDER_ZUERST_IM_REITER_INHALT_BEI_DEN_M_2
+            header.autoplay:
+              type: toggle
+              label: THEME_ABOUTME.ADMIN.AUTOMATISCH_WEITERBLAETTERN
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+            header.interval:
+              type: number
+              label: THEME_ABOUTME.ADMIN.SEKUNDEN_PRO_BILD
+              size: x-small
+              default: 6
+              validate:
+                min: 3
+                max: 20
+            header.slides:
+              type: list
+              label: THEME_ABOUTME.ADMIN.BILDER
+              style: vertical
+              collapsed: true
+              fields:
+                .uid:
+                  type: hidden
+                .image:
+                  type: filepicker
+                  label: THEME_ABOUTME.ADMIN.BILD
+                  folder: '@self'
+                  preview_images: true
+                  accept:
+                    - .jpg
+                    - .jpeg
+                    - .png
+                    - .webp
+                .alt:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.BILDBESCHREIBUNG_ALT_TEXT
+                .shade:
+                  type: select
+                  label: THEME_ABOUTME.ADMIN.SCHLEIER_FUER_BESSERE_LESBARKEIT
+                  default: light
+                  help: THEME_ABOUTME.ADMIN.GRAUER_VERLAUF_UEBER_DEM_BILD_UNTEN_DUNK
+                  options:
+                    light: THEME_ABOUTME.ADMIN.LEICHT_STANDARD
+                    strong: THEME_ABOUTME.ADMIN.STARK
+                    'off': THEME_ABOUTME.ADMIN.AUS
+                .eyebrow:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_OPTIONAL
+                .title:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.UEBERSCHRIFT_OPTIONAL
+                  description: THEME_ABOUTME.ADMIN.TEXT_ZWISCHEN_ZWEI_GLEICHHEITSZEICHEN_WI_2
+                .text:
+                  type: textarea
+                  label: 'Text (optional)'
+                  rows: 2
+                .button_text:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.BUTTON_TEXT_OPTIONAL
+                .button_url:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.BUTTON_ZIEL
+                  placeholder: THEME_ABOUTME.ADMIN.UEBER_MICH_EHRENAMT_ODER_HTTPS

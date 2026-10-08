@@ -1,0 +1,18 @@
+title: 'Freier Textabschnitt'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_text:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.ABSCHNITT
+          ordering@: 0
+          fields:
+            header.anchor:
+              type: text
+              label: THEME_ABOUTME.ADMIN.SPRUNGMARKE
+              size: medium
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT

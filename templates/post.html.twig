@@ -1,0 +1,27 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {% import 'macros/icons.html.twig' as ic %}
+    {% set h = page.header %}
+    {% set img = h.image ? page.media[h.image] : page.media.images|first %}
+    <div class="page-head">
+        <div class="crumbs">
+            {% if page.parent and not page.parent.root %}<a href="{{ page.parent.url }}">{{ page.parent.menu }}</a> · {% endif %}
+            <time datetime="{{ page.date|date('Y-m-d') }}">{{ page.date|date('THEME_ABOUTME.DATE_FORMAT'|t) }}</time>
+        </div>
+        <h1>{{ page.title }}</h1>
+        {% if h.teaser %}<p class="lead">{{ h.teaser }}</p>{% endif %}
+    </div>
+    {% if img %}
+        <figure class="post-hero">
+            <img src="{{ (img.width > 1600 ? img.cropResize(1600, 1600) : img).url }}" alt="{{ h.image_alt ?: '' }}">
+            {% if h.image_credit %}<figcaption>{{ 'THEME_ABOUTME.PHOTO'|t }}: {{ h.image_credit }}</figcaption>{% endif %}
+        </figure>
+    {% endif %}
+    <article class="prose">
+        {{ page.content|raw }}
+        {% if page.parent and not page.parent.root %}
+            <p class="post-back"><a class="pill-link" href="{{ page.parent.url }}">{{ 'THEME_ABOUTME.BACK_TO'|t }} {{ page.parent.menu }}</a></p>
+        {% endif %}
+    </article>
+{% endblock %}

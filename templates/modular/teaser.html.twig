@@ -1,0 +1,20 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% set h = page.header %}
+{% set img = h.image ? page.media[h.image] : page.media.images|first %}
+{% set link = h.button_url ?: config.system.home.alias %}
+{% set link = link starts with '/' ? base_url_relative ~ link : link %}
+{# Über-mich-Teaser: Bild und Text nebeneinander, Bildseite wählbar #}
+<section class="section teaser teaser-img-{{ h.image_side == 'right' ? 'right' : 'left' }}{{ h.text_align == 'top' ? ' align-top' }}" id="{{ h.anchor ?: 'kurzprofil' }}">
+    {% if img %}
+        <div class="teaser-media">
+            {% set shot = img.width > 900 ? img.cropZoom(900, 1000) : img %}
+            <img src="{{ shot.url }}" alt="{{ h.image_alt ?: h.title }}" loading="lazy">
+        </div>
+    {% endif %}
+    <div class="teaser-body">
+        {% if h.eyebrow %}<span class="eyebrow">{{ h.eyebrow }}</span>{% endif %}
+        <h2>{{ h.title|nh_highlight }}</h2>
+        <div class="teaser-text">{{ content|raw }}</div>
+        {% if h.button_text %}<div class="actions"><a class="btn btn-primary" href="{{ link }}">{{ h.button_text }}{{ ic.icon('arrow') }}</a></div>{% endif %}
+    </div>
+</section>

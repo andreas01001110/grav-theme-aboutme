@@ -1,0 +1,19 @@
+title: Kontaktformular
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_form_head:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.SEITENKOPF
+          ordering@: 1
+          fields:
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DEM_TITEL
+              placeholder: THEME_ABOUTME.ADMIN.KONTAKT
+            header.lead:
+              type: textarea
+              label: THEME_ABOUTME.ADMIN.EINLEITUNG_UNTER_DEM_TITEL
+              rows: 3

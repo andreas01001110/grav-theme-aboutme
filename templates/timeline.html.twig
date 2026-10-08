@@ -1,0 +1,26 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {% set h = page.header %}
+    <div class="page-head">
+        {% if h.eyebrow %}<div class="eyebrow">{{ h.eyebrow }}</div>{% endif %}
+        <h1>{{ page.title }}</h1>
+        {% if page.content|trim %}<div class="lead">{{ page.content|raw }}</div>{% endif %}
+    </div>
+    <ol class="timeline">
+        {% for e in h.entries %}
+            <li class="tl-item{{ e.current ? ' current' }}">
+                <div class="tl-when">{{ e.period }}</div>
+                <div class="tl-rail" aria-hidden="true"></div>
+                <div class="tl-what">
+                    {# Kategorie übersetzen; unbekannte Werte erscheinen so, wie sie eingetragen sind #}
+                    {% set cat_key = 'THEME_ABOUTME.CATEGORY.' ~ e.category %}
+                    {% set cat = e.category ? cat_key|t : '' %}
+                    <h2>{{ e.title }}{% if e.category %} <span class="tl-cat">{{ cat == cat_key ? e.category : cat }}</span>{% endif %}</h2>
+                    {% if e.place %}<p class="place">{{ e.place }}</p>{% endif %}
+                    {% if e.text %}<p>{{ e.text }}</p>{% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ol>
+{% endblock %}

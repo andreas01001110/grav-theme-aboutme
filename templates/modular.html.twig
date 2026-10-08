@@ -1,0 +1,15 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {# Auf der vorgelagerten Startseite lassen sich Bereiche zentral ausblenden
+       (Themes → AboutME → Vorgelagerte Startseite), gültig für alle Sprachen. #}
+    {% set front_route = '/' ~ (theme_var('front.route') ?: 'start')|trim('/') %}
+    {% set on_front = page.route == front_route %}
+    {% set section_keys = {'modular/slider': 'slider', 'modular/teaser': 'teaser', 'modular/articles': 'articles', 'modular/news': 'news', 'modular/contact': 'contact'} %}
+    {% for module in page.collection() %}
+        {% set key = section_keys[module.template] ?? null %}
+        {% if not (on_front and key and theme_var('front.sections.' ~ key) is same as(false)) %}
+            {{ module.content|raw }}
+        {% endif %}
+    {% endfor %}
+{% endblock %}

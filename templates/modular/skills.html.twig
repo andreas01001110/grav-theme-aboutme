@@ -1,0 +1,20 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% set h = page.header %}
+<section class="section" id="{{ h.anchor ?: 'kompetenzen' }}">
+    <div class="section-head">
+        {% if h.eyebrow %}<span class="eyebrow">{{ h.eyebrow }}</span>{% endif %}
+        <h2>{{ h.title }}</h2>
+        {% if content|trim %}<div class="intro">{{ content|raw }}</div>{% endif %}
+    </div>
+    <div class="bento">
+        {% for g in h.groups %}
+            <div class="skill{{ g.highlight ? ' highlight' }}">
+                <div class="skill-icon">{{ ic.icon(g.icon ?: 'list') }}</div>
+                <h3>{{ g.title }}</h3>
+                <ul class="chips">
+                    {% for item in g.items|nh_list %}<li>{{ item }}</li>{% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</section>

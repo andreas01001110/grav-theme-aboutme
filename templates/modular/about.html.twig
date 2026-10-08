@@ -1,0 +1,27 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% set h = page.header %}
+<section class="section" id="{{ h.anchor ?: 'ueber-mich' }}">
+    <div class="section-head">
+        {% if h.eyebrow %}<span class="eyebrow">{{ h.eyebrow }}</span>{% endif %}
+        <h2>{{ h.title }}</h2>
+        {% if content|trim %}<div class="intro">{{ content|raw }}</div>{% endif %}
+    </div>
+    <div class="rows">
+        {% for r in h.rubrics %}
+            <article class="row">
+                <div class="meta">
+                    {% if r.tag %}<span class="tag">{% if r.current %}<span class="dot" aria-hidden="true"></span>{% endif %}{{ r.tag }}</span>{% endif %}
+                    <b>{{ r.title }}</b>
+                    {% if r.sub %}<span class="sub">{{ r.sub }}</span>{% endif %}
+                </div>
+                <div class="rtext">
+                    {{ r.text|markdown|raw }}
+                    {% if r.link_url and r.link_text %}
+                        {% set href = r.link_url starts with '/' ? base_url_relative ~ r.link_url : r.link_url %}
+                        <a class="pill-link" href="{{ href }}">{{ r.link_text }}{{ ic.icon('arrow') }}</a>
+                    {% endif %}
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>

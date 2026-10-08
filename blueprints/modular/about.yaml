@@ -1,0 +1,60 @@
+title: 'Über mich (Rubriken)'
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_about:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.RUBRIKEN
+          ordering@: 0
+          fields:
+            header.anchor:
+              type: text
+              label: THEME_ABOUTME.ADMIN.SPRUNGMARKE
+              size: medium
+              help: THEME_ABOUTME.ADMIN.KLEINBUCHSTABEN_OHNE_LEERZEICHEN_Z_B_UEB
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT
+            header.rubrics:
+              type: list
+              label: THEME_ABOUTME.ADMIN.RUBRIKEN
+              style: vertical
+              collapsed: true
+              fields:
+                .uid:
+                  type: hidden
+                .tag:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.KENNZEICHNUNG
+                  placeholder: THEME_ABOUTME.ADMIN.BERUF_SEIT_2016
+                .current:
+                  type: toggle
+                  label: THEME_ABOUTME.ADMIN.LAEUFT_AKTUELL_ORANGER_PUNKT
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+                .title:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.TITEL
+                .sub:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.UNTERZEILE
+                .text:
+                  type: textarea
+                  label: Text
+                  rows: 6
+                  description: THEME_ABOUTME.ADMIN.MARKDOWN_MOEGLICH_Z_B_FETT_ODER_EINE_LIS
+                .link_text:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.LINKTEXT_OPTIONAL
+                  placeholder: THEME_ABOUTME.ADMIN.MEHR_ZUM_EHRENAMT
+                .link_url:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.LINKZIEL_OPTIONAL
+                  placeholder: /ehrenamt

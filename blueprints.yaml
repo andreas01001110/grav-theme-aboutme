@@ -1,0 +1,317 @@
+name: AboutME
+slug: aboutme
+type: theme
+version: 1.0.0
+description: 'Modern one-page theme for personal profile and about-me sites. Modular home page with header, sections, skills, projects and contact, plus timeline, gallery and videos, contact form, optional front page with slider, articles and news. Bilingual, light and dark mode, selectable colour schemes and backgrounds, self-hosted fonts with no external services.'
+icon: user
+author:
+  name: 'Andreas G. Neuhauser'
+  email: development@andreas-neuhauser.eu
+  url: 'https://andreas-neuhauser.de'
+keywords: 'about me, profile, portfolio, cv, resume, one-page, timeline, gallery, multilingual, dark mode, modular'
+license: MIT
+compatibility:
+  grav:
+    - '2.1'
+dependencies:
+  -
+    name: grav
+    version: '>=2.1.0'
+form:
+  validation: loose
+  fields:
+    brand_section:
+      type: section
+      title: THEME_ABOUTME.ADMIN.NAME_UND_LOGO
+      underline: true
+    brand.name:
+      type: text
+      label: THEME_ABOUTME.ADMIN.NAME_IN_DER_MENUELEISTE
+      help: THEME_ABOUTME.ADMIN.NAME_HILFE
+      placeholder: 'Jon Doe'
+    brand.monogram:
+      type: text
+      label: THEME_ABOUTME.ADMIN.MONOGRAMM
+      help: THEME_ABOUTME.ADMIN.ZWEI_BIS_DREI_BUCHSTABEN_IM_RUNDEN_LOGO
+      size: x-small
+      placeholder: JD
+    look_section:
+      type: section
+      title: THEME_ABOUTME.ADMIN.DARSTELLUNG
+      underline: true
+    mode:
+      type: select
+      label: THEME_ABOUTME.ADMIN.FARBMODUS
+      help: THEME_ABOUTME.ADMIN.AUTOMATISCH_FOLGT_DER_EINSTELLUNG_DES_BE
+      size: small
+      default: auto
+      options:
+        auto: THEME_ABOUTME.ADMIN.AUTOMATISCH
+        light: THEME_ABOUTME.ADMIN.HELL
+        dark: THEME_ABOUTME.ADMIN.DUNKEL
+    scheme:
+      type: select
+      label: THEME_ABOUTME.ADMIN.FARBSCHEMA
+      help: THEME_ABOUTME.ADMIN.AENDERT_AKZENTFARBEN_BUTTONS_DUNKLE_KACH
+      size: medium
+      default: petrol
+      options:
+        petrol: THEME_ABOUTME.ADMIN.PETROL_STANDARD
+        smaragd: THEME_ABOUTME.ADMIN.SMARAGDGRUEN
+        hellblau: THEME_ABOUTME.ADMIN.HELLBLAU
+        dunkelblau: THEME_ABOUTME.ADMIN.DUNKELBLAU
+        indigo: Indigo
+        lila: THEME_ABOUTME.ADMIN.LILA
+        magenta: THEME_ABOUTME.ADMIN.MAGENTA_BEERE
+        hellrot: THEME_ABOUTME.ADMIN.HELLROT
+        dunkelrot: THEME_ABOUTME.ADMIN.DUNKELROT
+        orange: Orange
+        gelb: THEME_ABOUTME.ADMIN.GELB
+        graphit: THEME_ABOUTME.ADMIN.GRAPHIT_ANTHRAZIT
+    background:
+      type: select
+      label: THEME_ABOUTME.ADMIN.HINTERGRUND
+      help: THEME_ABOUTME.ADMIN.GILT_FUER_ALLE_SEITEN_AURORA_BEWEGT_SICH
+      size: medium
+      default: mint
+      options:
+        mint: THEME_ABOUTME.ADMIN.FARBVERLAUF_DEZENT
+        aurora: THEME_ABOUTME.ADMIN.AURORA_SANFT_BEWEGT
+        grid: THEME_ABOUTME.ADMIN.PUNKTRASTER_TECH
+        plain: THEME_ABOUTME.ADMIN.EINFARBIG
+    font_heading:
+      type: select
+      label: THEME_ABOUTME.ADMIN.FONT_HEADING
+      help: THEME_ABOUTME.ADMIN.FONT_HILFE
+      size: medium
+      default: bricolage
+      options:
+        bricolage: THEME_ABOUTME.ADMIN.FONT_BRICOLAGE
+        fraunces: THEME_ABOUTME.ADMIN.FONT_FRAUNCES
+        playfair: THEME_ABOUTME.ADMIN.FONT_PLAYFAIR
+        sora: THEME_ABOUTME.ADMIN.FONT_SORA
+        space: THEME_ABOUTME.ADMIN.FONT_SPACE
+    font_body:
+      type: select
+      label: THEME_ABOUTME.ADMIN.FONT_BODY
+      help: THEME_ABOUTME.ADMIN.FONT_HILFE
+      size: medium
+      default: figtree
+      options:
+        figtree: THEME_ABOUTME.ADMIN.FONT_FIGTREE
+        inter: THEME_ABOUTME.ADMIN.FONT_INTER
+        roboto: THEME_ABOUTME.ADMIN.FONT_ROBOTO
+        opensans: THEME_ABOUTME.ADMIN.FONT_OPENSANS
+        sourcesans: THEME_ABOUTME.ADMIN.FONT_SOURCESANS
+    mode_toggle:
+      type: toggle
+      label: THEME_ABOUTME.ADMIN.UMSCHALTER_HELL_DUNKEL_ANZEIGEN
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    language_section:
+      type: section
+      title: THEME_ABOUTME.ADMIN.SPRACHE
+      underline: true
+    auto_language:
+      type: toggle
+      label: THEME_ABOUTME.ADMIN.SPRACHE_AUTOMATISCH_WAEHLEN
+      help: THEME_ABOUTME.ADMIN.SPRACHE_AUTOMATISCH_HILFE
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    front_section:
+      type: section
+      title: THEME_ABOUTME.ADMIN.VORGELAGERTE_STARTSEITE
+      underline: true
+      text: THEME_ABOUTME.ADMIN.IST_DER_SCHALTER_AN_ZEIGT_DIE_STARTADRES
+    front.enabled:
+      type: toggle
+      label: THEME_ABOUTME.ADMIN.STARTSEITE_VORSCHALTEN
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    front.route:
+      type: text
+      label: THEME_ABOUTME.ADMIN.SEITE_FUER_DIE_STARTADRESSE
+      size: medium
+      default: /start
+      help: THEME_ABOUTME.ADMIN.NORMALERWEISE_START_NUR_AENDERN_WENN_DIE
+    front.sections.slider:
+      type: toggle
+      label: THEME_ABOUTME.ADMIN.FRONT_SLIDER
+      help: THEME_ABOUTME.ADMIN.FRONT_SECTIONS_HILFE
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+    front.sections.teaser:
+      type: toggle
+      label: THEME_ABOUTME.ADMIN.FRONT_TEASER
+      help: THEME_ABOUTME.ADMIN.FRONT_SECTIONS_HILFE
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+    front.sections.articles:
+      type: toggle
+      label: THEME_ABOUTME.ADMIN.FRONT_ARTICLES
+      help: THEME_ABOUTME.ADMIN.FRONT_SECTIONS_HILFE
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+    front.sections.news:
+      type: toggle
+      label: THEME_ABOUTME.ADMIN.FRONT_NEWS
+      help: THEME_ABOUTME.ADMIN.FRONT_SECTIONS_HILFE
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+    front.sections.contact:
+      type: toggle
+      label: THEME_ABOUTME.ADMIN.FRONT_CONTACT
+      help: THEME_ABOUTME.ADMIN.FRONT_SECTIONS_HILFE
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+    nav_section:
+      type: section
+      title: THEME_ABOUTME.ADMIN.MENUE
+      underline: true
+      text: THEME_ABOUTME.ADMIN.MENU_SECTION_TEXT
+    nav_links:
+      type: list
+      label: THEME_ABOUTME.ADMIN.MENUEEINTRAEGE
+      style: vertical
+      fields:
+        .text:
+          type: text
+          label: THEME_ABOUTME.ADMIN.MENU_TEXT
+          placeholder: THEME_ABOUTME.ADMIN.PROJEKTE
+          help: THEME_ABOUTME.ADMIN.MENU_TEXT_HILFE
+        .texts:
+          type: array
+          label: THEME_ABOUTME.ADMIN.MENU_UEBERSETZUNGEN
+          placeholder_key: en
+          placeholder_value: Projects
+          help: THEME_ABOUTME.ADMIN.MENU_UEBERSETZUNGEN_HILFE
+        .url:
+          type: text
+          label: THEME_ABOUTME.ADMIN.ZIEL
+          placeholder: THEME_ABOUTME.ADMIN.PROJEKTE_EHRENAMT_ODER_HTTPS
+          help: THEME_ABOUTME.ADMIN.NAME_SPRINGT_ZU_EINEM_ABSCHNITT_DER_STAR
+        .new_tab:
+          type: toggle
+          label: THEME_ABOUTME.ADMIN.IN_NEUEM_TAB_OEFFNEN
+          highlight: 1
+          default: 0
+          options:
+            1: PLUGIN_ADMIN.YES
+            0: PLUGIN_ADMIN.NO
+          validate:
+            type: bool
+    social_section:
+      type: section
+      title: THEME_ABOUTME.ADMIN.SOCIAL_MEDIA
+      underline: true
+      text: THEME_ABOUTME.ADMIN.DIE_REIHENFOLGE_DER_LISTE_IST_DIE_REIHEN
+    social_links:
+      type: list
+      label: THEME_ABOUTME.ADMIN.PROFILE
+      style: vertical
+      fields:
+        .network:
+          type: select
+          label: THEME_ABOUTME.ADMIN.NETZWERK
+          default: instagram
+          options:
+            # Soziale Netzwerke
+            instagram: Instagram
+            facebook: Facebook
+            threads: Threads
+            x: 'X (Twitter)'
+            bluesky: Bluesky
+            mastodon: Mastodon
+            pinterest: Pinterest
+            # Beruf
+            linkedin: LinkedIn
+            xing: XING
+            # Video und Streaming
+            youtube: YouTube
+            tiktok: TikTok
+            twitch: Twitch
+            # Community und Entwicklung
+            discord: Discord
+            github: GitHub
+            gitlab: GitLab
+            # Musik
+            spotify: Spotify
+            soundcloud: SoundCloud
+            bandcamp: Bandcamp
+            # Shop
+            etsy: Etsy
+        .url:
+          type: url
+          label: THEME_ABOUTME.ADMIN.ADRESSE
+          placeholder: 'https://…'
+        .in_menu:
+          type: toggle
+          label: THEME_ABOUTME.ADMIN.SOCIAL_IM_MENUE
+          help: THEME_ABOUTME.ADMIN.SOCIAL_IM_MENUE_HILFE
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.YES
+            0: PLUGIN_ADMIN.NO
+          validate:
+            type: bool
+    footer_section:
+      type: section
+      title: THEME_ABOUTME.ADMIN.FUSSZEILE
+      underline: true
+      text: THEME_ABOUTME.ADMIN.EMPFAENGER_UND_ABSENDER_DES_KONTAKTFORMU
+    footer.text:
+      type: text
+      label: THEME_ABOUTME.ADMIN.TEXT_IN_DER_FUSSZEILE
+      help: THEME_ABOUTME.ADMIN.FUSSZEILE_HILFE
+      placeholder: 'Jon Doe · Example Town'
+    footer.impressum:
+      type: text
+      label: THEME_ABOUTME.ADMIN.SEITE_IMPRESSUM
+      size: medium
+      default: /impressum
+    footer.datenschutz:
+      type: text
+      label: THEME_ABOUTME.ADMIN.SEITE_DATENSCHUTZ
+      size: medium
+      default: /datenschutz

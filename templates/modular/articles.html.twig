@@ -1,0 +1,21 @@
+{% import 'macros/icons.html.twig' as ic %}
+{% import 'macros/posts.html.twig' as posts %}
+{% set h = page.header %}
+{# Ohne Angabe: /articles, sonst /artikel #}
+{% set source = h.source ? page.find(h.source) : (page.find('/articles') ?: page.find('/artikel')) %}
+{% set items = source ? source.children.published.order('date', 'desc').slice(0, h.limit ?: 2) : [] %}
+{% if items|length %}
+<section class="section" id="{{ h.anchor ?: 'artikel' }}">
+    <div class="section-head section-head-row">
+        <div>
+            {% if h.eyebrow %}<span class="eyebrow">{{ h.eyebrow }}</span>{% endif %}
+            <h2>{{ h.title }}</h2>
+            {% if content|trim %}<div class="intro">{{ content|raw }}</div>{% endif %}
+        </div>
+        {% if h.all_text and source.routable %}<a class="pill-link" href="{{ source.url }}">{{ h.all_text }}{{ ic.icon('arrow') }}</a>{% endif %}
+    </div>
+    <div class="articles">
+        {% for post in items %}{{ posts.article(post, h.button_text, h.show_date ?? true, h.text_align) }}{% endfor %}
+    </div>
+</section>
+{% endif %}

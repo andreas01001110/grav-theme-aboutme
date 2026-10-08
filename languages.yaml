@@ -1,0 +1,578 @@
+de:
+  THEME_ABOUTME:
+    SKIP: 'Zum Inhalt springen'
+    MAIN_NAV: Hauptmenü
+    LEGAL_NAV: Rechtliches
+    LANG_NAV: 'Sprache wählen'
+    MODE_TOGGLE: 'Dunkelmodus umschalten'
+    MENU_OPEN: 'Menü öffnen'
+    CONTACT: Kontakt
+    IMPRESSUM: Impressum
+    PRIVACY: Datenschutz
+    WRITE_MESSAGE: 'Nachricht schreiben'
+    AI_BUILT: 'KI-gestützt entwickelt'
+    SCREENSHOT: Screenshot
+    PHOTO: Foto
+    WATCH_YOUTUBE: 'Auf YouTube ansehen'
+    VIDEO_NOTE: 'Die Videos öffnen sich auf YouTube. Beim Klick gelten die Datenschutzbestimmungen von YouTube.'
+    LOGO: Logo
+    ERROR: Fehler
+    ERROR_TITLE: 'Diese Seite gibt es nicht.'
+    ERROR_TEXT: 'Vielleicht wurde sie verschoben. Auf der Startseite geht es weiter.'
+    TO_HOME: 'Zur Startseite'
+    LB_VIEW: Bildansicht
+    LB_CLOSE: Schließen
+    LB_PREV: 'Vorheriges Bild'
+    LB_NEXT: 'Nächstes Bild'
+    READ_MORE: Weiterlesen
+    VIEW_ALL: 'Alle anzeigen'
+    BACK_TO: 'Zurück zu'
+    SLIDER: Bildergalerie
+    SLIDE_PREV: 'Vorherige Folie'
+    SLIDE_NEXT: 'Nächste Folie'
+    SLIDE_GOTO: 'Gehe zu Folie'
+    NEWS_PREV: 'Vorherige Meldungen'
+    NEWS_NEXT: 'Weitere Meldungen'
+    DATE_FORMAT: d.m.Y
+    NO_POSTS: 'Noch keine Beiträge vorhanden.'
+    CATEGORY:
+      Beruf: Beruf
+      Ehrenamt: Ehrenamt
+      Weiterbildung: Weiterbildung
+      Studium: Studium
+      Projekt: Projekt
+    ADMIN:
+      ABSCHNITT: Abschnitt
+      ADRESSE: Adresse
+      AENDERT_AKZENTFARBEN_BUTTONS_DUNKLE_KACH: 'Ändert Akzentfarben, Buttons, dunkle Kacheln und Hintergrund-Schimmer. Gilt für Hell- und Dunkelmodus.'
+      ALLE_ARTIKEL: 'Alle Artikel'
+      ALLE_NEWS: 'Alle News'
+      ALS_DUNKLE_KARTE_HERVORHEBEN: 'Als dunkle Karte hervorheben'
+      ANZAHL: Anzahl
+      ARTIKEL: Artikel
+      AURORA_SANFT_BEWEGT: 'Aurora (sanft bewegt)'
+      AUS: Aus
+      AUTOMATISCH: Automatisch
+      AUTOMATISCH_FOLGT_DER_EINSTELLUNG_DES_BE: '„Automatisch“ folgt der Einstellung des Besuchers.'
+      AUTOMATISCH_WEITERBLAETTERN: 'Automatisch weiterblättern'
+      BEITRAG: Beitrag
+      BERUF: Beruf
+      BERUF_SEIT_2016: 'Beruf · seit 2016'
+      BESCHREIBUNG: Beschreibung
+      BILD: Bild
+      BILDBESCHREIBUNG_ALT_TEXT: 'Bildbeschreibung (Alt-Text)'
+      BILDBESCHREIBUNG_DES_LOGOS: 'Bildbeschreibung des Logos'
+      BILDER: Bilder
+      BILDER_ZUERST_IM_REITER_INHALT_BEI_DEN_M: 'Bilder zuerst im Reiter „Inhalt“ bei den Medien hochladen. Die Reihenfolge der Liste ist die Reihenfolge auf der Seite. Die Galerie wird in der Hauptsprache gepflegt und erscheint automatisch auch in den anderen Sprachen. Dort trägst du nur ein Bild ein, wenn du seine Beschreibung übersetzen willst.'
+      BILDER_ZUERST_IM_REITER_INHALT_BEI_DEN_M_2: 'Bilder zuerst im Reiter „Inhalt“ bei den Medien hochladen. Breites Querformat (z. B. 2000 × 900 Pixel) passt am besten. Die Reihenfolge der Liste ist die Reihenfolge im Slider.'
+      BILD_STEHT: 'Bild steht'
+      BILD_ZUERST_IM_REITER_INHALT_UNTER_MEDIE: 'Bild zuerst im Reiter „Inhalt“ unter Medien hochladen. Ideal: Hochformat 4:5, mindestens 720 × 900 Pixel. Ohne Foto erscheint das Monogramm.'
+      BROWSERFENSTER: Browserfenster
+      BUTTON_TEXT: Button-Text
+      BUTTON_TEXT_JE_ARTIKEL: 'Button-Text je Artikel'
+      BUTTON_TEXT_OPTIONAL: 'Button-Text (optional)'
+      BUTTON_ZIEL: Button-Ziel
+      DARSTELLUNG: Darstellung
+      DAS_DATUM_STELLST_DU_IM_REITER_OPTIONEN: 'Das Datum stellst du im Reiter „Optionen“ ein, danach wird sortiert. Bilder zuerst im Reiter „Inhalt“ bei den Medien hochladen. Ohne Auswahl wird das erste Bild im Ordner verwendet.'
+      DATUM_ANZEIGEN: 'Datum anzeigen'
+      DER_KONTAKT_BUTTON_IN_DER_MENUELEISTE_SP: 'Der Kontakt-Button in der Menüleiste springt auf #kontakt.'
+      DIE_REIHENFOLGE_DER_LISTE_IST_DIE_REIHEN: 'Die Reihenfolge der Liste ist die Reihenfolge auf der Website. Einträge lassen sich am Griff links verschieben. Einträge ohne Adresse werden nicht angezeigt.'
+      DIE_VIDEOS_WERDEN_VERLINKT_NICHT_EINGEBE: 'Die Videos werden verlinkt, nicht eingebettet. So fließen beim Seitenaufruf keine Daten an YouTube.'
+      DUNKEL: Dunkel
+      DUNKELBLAU: Dunkelblau
+      DUNKELROT: Dunkelrot
+      EHRENAMT: Ehrenamt
+      EINFARBIG: Einfarbig
+      EINLEITUNG_UNTER_DEM_TITEL: 'Einleitung unter dem Titel'
+      EINTRAEGE: Einträge
+      EINTRAEGE_VON_OBEN_NACH_UNTEN: 'Einträge (von oben nach unten)'
+      EIN_SATZ_DAZU: 'Ein Satz dazu'
+      EIN_SATZ_DAZU_OPTIONAL: 'Ein Satz dazu (optional)'
+      EMPFAENGER_UND_ABSENDER_DES_KONTAKTFORMU: 'Empfänger und Absender des Kontaktformulars stellst du unter Plugins → Email ein (Felder „An“ und „Von“).'
+      ERSCHEINT_AUF_DER_STARTSEITE_UND_UNTER_D: 'Erscheint auf der Startseite und unter dem Titel. Leer lassen, dann wird der Anfang des Textes verwendet.'
+      FARBMODUS: Farbmodus
+      FARBSCHEMA: Farbschema
+      FARBVERLAUF_DEZENT: 'Farbverlauf (dezent)'
+      FONT_BODY: 'Schrift für Texte'
+      FONT_BRICOLAGE: 'Bricolage Grotesque – modern, markant (Standard)'
+      FONT_FIGTREE: 'Figtree – freundlich, klar (Standard)'
+      FONT_FRAUNCES: 'Fraunces – elegante Serifenschrift'
+      FONT_HEADING: 'Schrift für Titel'
+      FONT_HILFE: 'Alle Schriften liegen lokal im Theme, ohne Verbindung zu Google. Geladen wird nur die gewählte Schrift.'
+      FONT_INTER: 'Inter – neutral, sehr gut lesbar'
+      FONT_OPENSANS: 'Open Sans – offen, freundlich'
+      FONT_PLAYFAIR: 'Playfair Display – klassisch, edel'
+      FONT_ROBOTO: 'Roboto – sachlich, weit verbreitet'
+      FONT_SORA: 'Sora – geometrisch, klar'
+      FONT_SOURCESANS: 'Source Sans 3 – ruhig, etwas schmaler'
+      FONT_SPACE: 'Space Grotesk – technisch, eigenwillig'
+      FOTO: Foto
+      FOTOGRAF_IN: Fotograf/in
+      FOTOGRAF_IN_OPTIONAL: 'Fotograf/in (optional)'
+      FOTO_SEITE: Foto-Position
+      FOTO_SEITE_HILFE: 'Seite des Fotos neben dem Text. Auf dem Handy steht das Foto immer unter dem Text.'
+      FRONT_ARTICLES: 'Artikel anzeigen'
+      FRONT_CONTACT: 'Kontaktbereich anzeigen'
+      FRONT_NEWS: 'News anzeigen'
+      FRONT_SECTIONS_HILFE: 'Gilt für alle Sprachen. Ausgeblendete Bereiche bleiben mit ihren Inhalten erhalten.'
+      FRONT_SLIDER: 'Bild-Slider anzeigen'
+      FRONT_TEASER: 'Kurzprofil anzeigen'
+      FUNKE_KI: 'Funke (KI)'
+      FUSSZEILE: Fußzeile
+      FUSSZEILE_HILFE: 'Steht hinter „© Jahr“. Leer gelassen erscheint der Name aus der Menüleiste.'
+      GALERIE: Galerie
+      GALERIE_BILD_FORMAT: Format
+      GALERIE_BILD_FORMAT_HILFE: 'Weicht vom Format der Galerie ab, z. B. ein Querformat-Bild in einer Hochformat-Galerie. Es wird dann drei Spalten breit bzw. zwei Reihen hoch dargestellt.'
+      GALERIE_BILD_WIE_GALERIE: 'Wie die Galerie'
+      GALERIE_FORMAT: 'Format der Vorschaubilder'
+      GALERIE_FORMAT_HILFE: 'Querformat für Fotos, Hochformat für Handy-Screenshots. Animierte GIFs bleiben animiert.'
+      GALERIE_FORMAT_HOCH: 'Hochformat (Handy-Screenshots)'
+      GALERIE_FORMAT_QUER: 'Querformat (Fotos)'
+      GALERIE_VIDEOS: 'Galerie & Videos'
+      GEFUELLT: Gefüllt
+      GELB: Gelb
+      GILT_FUER_ALLE_SEITEN_AURORA_BEWEGT_SICH: 'Gilt für alle Seiten. „Aurora“ bewegt sich ganz langsam, außer wenn der Besucher weniger Bewegung eingestellt hat.'
+      GLOBUS: Globus
+      GRAFIK_OHNE_SCREENSHOT: 'Grafik ohne Screenshot'
+      GRAPHIT_ANTHRAZIT: 'Graphit / Anthrazit'
+      GRAUER_VERLAUF_UEBER_DEM_BILD_UNTEN_DUNK: 'Grauer Verlauf über dem Bild, unten dunkler als oben. Bei hellen Bildern „Stark“ wählen.'
+      GROSSE_ZAHL_AUF_DER_KARTE: 'Große Zahl auf der Karte'
+      HELL: Hell
+      HELLBLAU: Hellblau
+      HELLROT: Hellrot
+      HINTERGRUND: Hintergrund
+      HINTERGRUNDBILD_OPTIONAL: 'Hintergrundbild (optional)'
+      HOECHSTENS_ANZEIGEN: 'Höchstens anzeigen'
+      IMPRESSIONEN: Impressionen
+      INFOKARTEN_AM_FOTO: 'Infokarten am Foto'
+      IN_NEUEM_TAB_OEFFNEN: 'In neuem Tab öffnen'
+      IST_DER_SCHALTER_AN_ZEIGT_DIE_STARTADRES: 'Ist der Schalter an, zeigt die Startadresse („/“) die Seite „Start“ mit Slider, Über-mich-Teaser, Artikeln und News. Die bisherige Profilseite bleibt unter ihrer eigenen Adresse erreichbar (z. B. „/about“). Die Bausteine pflegst du unter Seiten → Start, Artikel und News unter den gleichnamigen Seiten.'
+      JE_EINE_KARTE_OBEN_UND_UNTEN_AM_FOTO_DIE: 'Je eine Karte oben und unten am Foto. Die Seite (links oder rechts) ist frei wählbar, beide Karten dürfen auch auf derselben Seite stehen. Leere Karten werden nicht angezeigt.'
+      KATEGORIE: Kategorie
+      KENNZAHLEN_UNTER_DEM_KOPFBEREICH: 'Kennzahlen unter dem Kopfbereich'
+      KENNZEICHNUNG: Kennzeichnung
+      KLEINBUCHSTABEN_OHNE_LEERZEICHEN_Z_B_UEB: 'Kleinbuchstaben ohne Leerzeichen, z. B. ueber-mich.'
+      KLEINE_KENNZEICHNUNG: 'Kleine Kennzeichnung'
+      KLEINE_ZEILE: 'Kleine Zeile'
+      KLEINE_ZEILE_MIT_ORANGEM_PUNKT_UEBER_DER: 'Kleine Zeile mit orangem Punkt über der Überschrift.'
+      KLEINE_ZEILE_OPTIONAL: 'Kleine Zeile (optional)'
+      KLEINE_ZEILE_UEBER_DEM_TITEL: 'Kleine Zeile über dem Titel'
+      KLEINE_ZEILE_UEBER_DEN_VIDEOS: 'Kleine Zeile über den Videos'
+      KLEINE_ZEILE_UEBER_DER_GALERIE: 'Kleine Zeile über der Galerie'
+      KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT: 'Kleine Zeile über der Überschrift'
+      KOMPETENZEN: Kompetenzen
+      KOMPETENZ_GRUPPEN: Kompetenz-Gruppen
+      KONTAKT: Kontakt
+      KOPFBEREICH: Kopfbereich
+      KURZTEXT: Kurztext
+      LAEUFT_AKTUELL: 'Läuft aktuell'
+      LAEUFT_AKTUELL_ORANGER_PUNKT: 'Läuft aktuell (oranger Punkt)'
+      LEER_LASSEN_FUER_DIE_PROFILSEITE: 'Leer lassen für die Profilseite.'
+      LEER_LASSEN_FUER_DIE_SEITE_MIT_DEM_KONTA: 'Leer lassen für die Seite mit dem Kontaktformular (/contact oder /kontakt).'
+      LEICHT_STANDARD: 'Leicht (Standard)'
+      LILA: Lila
+      LINKS: Links
+      LINKTEXT: Linktext
+      LINKTEXT_OPTIONAL: 'Linktext (optional)'
+      LINKZIEL_OPTIONAL: 'Linkziel (optional)'
+      LINK_1_ADRESSE: 'Link 1, Adresse'
+      LINK_1_TEXT: 'Link 1, Text'
+      LINK_2_ADRESSE_OPTIONAL: 'Link 2, Adresse (optional)'
+      LINK_2_TEXT_OPTIONAL: 'Link 2, Text (optional)'
+      LINK_ALLE_ARTIKEL_OPTIONAL: 'Link „Alle Artikel“ (optional)'
+      LINK_ALLE_NEWS_OPTIONAL: 'Link „Alle News“ (optional)'
+      LINK_KARTE_AM_TEXTENDE: 'Link-Karte am Textende'
+      LISTE: Liste
+      LISTET_ALLE_UNTERSEITEN_BEITRAEGE_NACH_D: 'Listet alle Unterseiten (Beiträge) nach Datum, die neuesten zuerst. Neue Beiträge legst du als Unterseite mit dem Seitentyp „Beitrag“ an.'
+      MAGENTA_BEERE: 'Magenta / Beere'
+      MARKDOWN_MOEGLICH_Z_B_FETT_ODER_EINE_LIS: 'Markdown möglich, z. B. **fett** oder eine Liste mit Spiegelstrichen.'
+      MEHR_UEBER_DEN_VEREIN: 'Mehr über den Verein'
+      MEHR_UEBER_MICH: 'Mehr über mich'
+      MEHR_ZUM_EHRENAMT: 'Mehr zum Ehrenamt'
+      MENUE: Menü
+      MENUEEINTRAEGE: Menüeinträge
+      MENU_SECTION_TEXT: 'Diese Liste ist das Menü der Website. Reihenfolge am Griff links ändern, Einträge mit dem Mülleimer entfernen oder neue hinzufügen, dann speichern. Ist die Liste leer, wird sie beim nächsten Öffnen mit den aktuell sichtbaren Seiten gefüllt. Neue Seiten erscheinen erst im Menü, wenn sie hier eingetragen sind. Der Button „Kontakt“ bleibt immer.'
+      MENU_TEXT: Text
+      MENU_TEXT_HILFE: 'Text in der Standardsprache der Website. Er gilt auch für alle Sprachen ohne eigene Übersetzung.'
+      MENU_UEBERSETZUNGEN: 'Übersetzungen (optional)'
+      MENU_UEBERSETZUNGEN_HILFE: 'Links der Sprachcode (z. B. en, fr), rechts der Text in dieser Sprache.'
+      MITTIG: Mittig
+      MIT_KOMMA_GETRENNT_Z_B_ANDROID_PWA: 'Mit Komma getrennt, z. B. Android, PWA'
+      MIT_KOMMA_GETRENNT_Z_B_SCRUM_JIRA_MODERA: 'Mit Komma getrennt, z. B. Scrum, Jira, Moderation'
+      MONOGRAMM: Monogramm
+      NACHRICHT_SCHREIBEN: 'Nachricht schreiben'
+      NAME_HILFE: 'Leer gelassen wird der Seitentitel aus Konfiguration → Seite verwendet.'
+      NAME_IN_DER_MENUELEISTE: 'Name in der Menüleiste'
+      NAME_SPRINGT_ZU_EINEM_ABSCHNITT_DER_STAR: '#name springt zu einem Abschnitt der Startseite (Sprungmarke), /seite öffnet eine Seite (die Sprache wird automatisch ergänzt), https://… öffnet eine externe Adresse.'
+      NAME_UND_LOGO: 'Name und Logo'
+      NETZWERK: Netzwerk
+      NORMALERWEISE_START_NUR_AENDERN_WENN_DIE: 'Normalerweise /start. Nur ändern, wenn die Startseite in einem anderen Ordner liegt.'
+      OBEN: Oben
+      OBEN_KLEINE_ZEILE: 'Oben: kleine Zeile'
+      OBEN_SEITE: 'Oben: Seite'
+      OBEN_WERT: 'Oben: Wert'
+      OPTIONAL_Z_B_MEHR_UEBER_DEN_VEREIN_MIT_L: 'Optional, z. B. „Mehr über den Verein“ mit Logo. Ohne Adresse erscheint keine Karte. Das Logo zuerst im Reiter „Inhalt“ bei den Medien hochladen.'
+      ORDNER_DER_ARTIKEL: 'Ordner der Artikel'
+      ORDNER_DER_MELDUNGEN: 'Ordner der Meldungen'
+      ORT_ORGANISATION: 'Ort / Organisation'
+      PERSONEN: Personen
+      PETROL_STANDARD: 'Petrol (Standard)'
+      PH_BADGE_BOTTOM_VALUE: 'Scrum · ITIL'
+      PH_BADGE_TOP_LABEL: Erfahrung
+      PH_BADGE_TOP_VALUE: '15+ Jahre'
+      PH_LOGO_ALT: 'Logo des Vereins'
+      PH_PHOTO_ALT: 'Porträt von Jon Doe'
+      PH_STATUS: 'Aktuell: Projektleitung bei Beispiel GmbH'
+      PROFILE: Profile
+      PROJEKT: Projekt
+      PROJEKTE: Projekte
+      PROJEKTE_EHRENAMT_ODER_HTTPS: '#projekte, /ehrenamt oder https://…'
+      PROJEKTE_ODER_STATIONEN: '#projekte oder /career'
+      PUNKTRASTER_TECH: 'Punktraster (Tech)'
+      QUERFORMAT_IDEAL_960_420_PIXEL_OHNE_BILD: 'Querformat, ideal 960 × 420 Pixel. Ohne Bild erscheint eine kleine Grafik.'
+      RECHTS: Rechts
+      RUBRIKEN: Rubriken
+      SCHILD_MIT_HAKEN: 'Schild mit Haken'
+      SCHLAGWORTE: Schlagworte
+      SCHLAGWORT_KI_GESTUETZT_ENTWICKELT_ANZEI: 'Schlagwort „KI-gestützt entwickelt“ anzeigen'
+      SCHLEIER_FUER_BESSERE_LESBARKEIT: 'Schleier für bessere Lesbarkeit'
+      SEITENKOPF: Seitenkopf
+      SEITE_DATENSCHUTZ: 'Seite Datenschutz'
+      SEITE_FUER_DIE_STARTADRESSE: 'Seite für die Startadresse'
+      SEITE_IMPRESSUM: 'Seite Impressum'
+      SEIT_2016_ODER_2010_2016: 'seit 2016 oder 2010 – 2016'
+      SEKUNDEN_PRO_BILD: 'Sekunden pro Bild'
+      SMARAGDGRUEN: Smaragdgrün
+      SOCIAL_IM_MENUE: 'Oben im Menü anzeigen'
+      SOCIAL_IM_MENUE_HILFE: 'Im Kontaktbereich und im Handy-Menü erscheinen immer alle Profile.'
+      SOCIAL_MEDIA: 'Social Media'
+      SPRACHE: Sprache
+      SPRACHE_AUTOMATISCH_HILFE: 'Bevorzugt der Browser eines Besuchers eine andere der eingestellten Sprachen als die Standardsprache, wird er beim ersten Aufruf einmalig auf diese Fassung weitergeleitet (z. B. /en). Wird keine eingestellte Sprache bevorzugt, gilt Englisch, sofern vorhanden. Wer im Umschalter eine Sprache wählt, wird danach nicht mehr umgeleitet (Sprach-Cookie). Suchmaschinen sind nicht betroffen.'
+      SPRACHE_AUTOMATISCH_WAEHLEN: 'Sprache automatisch wählen'
+      SPRUNGMARKE: Sprungmarke
+      STARK: Stark
+      STARTSEITE_VORSCHALTEN: 'Startseite vorschalten'
+      STATUSZEILE: Statuszeile
+      STIFT_DESIGN: 'Stift (Design)'
+      STIL: Stil
+      STUDIUM: Studium
+      SYMBOL: Symbol
+      TEXT_IN_DER_FUSSZEILE: 'Text in der Fußzeile'
+      TEXT_NEBEN_DEM_BILD: 'Text neben dem Bild'
+      TEXT_ZWISCHEN_ZWEI_GLEICHHEITSZEICHEN_WI: 'Text zwischen zwei Gleichheitszeichen wird farbig hervorgehoben, z. B. ==Qualität sichern.==. Der Einleitungstext steht im Reiter „Inhalt“.'
+      TEXT_ZWISCHEN_ZWEI_GLEICHHEITSZEICHEN_WI_2: 'Text zwischen zwei Gleichheitszeichen wird hervorgehoben, z. B. ==Qualität==.'
+      TITEL: Titel
+      UEBERSCHRIFT: Überschrift
+      UEBERSCHRIFT_DER_GALERIE: 'Überschrift der Galerie'
+      UEBERSCHRIFT_DER_VIDEOS: 'Überschrift der Videos'
+      UEBERSCHRIFT_FELD_TITEL_TEXTAUSZUG_TEXTF: 'Überschrift = Feld „Titel“, Textauszug = Textfeld im Reiter „Inhalt“. Das Bild zuerst im Reiter „Inhalt“ bei den Medien hochladen.'
+      UEBERSCHRIFT_OPTIONAL: 'Überschrift (optional)'
+      UEBERSICHT: Übersicht
+      UEBER_MICH_EHRENAMT_ODER_HTTPS: '/about, /gallery oder https://…'
+      UMRANDET: Umrandet
+      UMSCHALTER_HELL_DUNKEL_ANZEIGEN: 'Umschalter Hell/Dunkel anzeigen'
+      UNTEN_KLEINE_ZEILE: 'Unten: kleine Zeile'
+      UNTEN_SEITE: 'Unten: Seite'
+      UNTEN_WERT: 'Unten: Wert'
+      UNTERZEILE: Unterzeile
+      VORGELAGERTE_STARTSEITE: 'Vorgelagerte Startseite'
+      WEITERBILDUNG: Weiterbildung
+      WEITERLESEN: Weiterlesen
+      YOUTUBE_ADRESSE: YouTube-Adresse
+      ZAHL: Zahl
+      ZEIGT_DIE_NEUESTEN_ARTIKEL_AUS_DEM_ANGEG: 'Zeigt die neuesten Artikel aus dem angegebenen Ordner mit Titel, Bild, Textauszug und Button. Die Artikel selbst pflegst du unter Seiten → Artikel (Seitentyp „Beitrag“). Ohne Artikel wird der Abschnitt ausgeblendet.'
+      ZEIGT_DIE_NEUESTEN_MELDUNGEN_AUS_DEM_ANG: 'Zeigt die neuesten Meldungen aus dem angegebenen Ordner: Bild, Datum, Titel und zwei Zeilen Text. Am Computer stehen bis zu drei nebeneinander, weitere erreicht man per Pfeil oder Wischen. Die Meldungen pflegst du unter Seiten → News (Seitentyp „Beitrag“).'
+      ZEITRAUM: Zeitraum
+      ZEITSTRAHL: Zeitstrahl
+      ZERTIFIZIERT: Zertifiziert
+      ZIEL: Ziel
+      ZWEI_BIS_DREI_BUCHSTABEN_IM_RUNDEN_LOGO: 'Zwei bis drei Buchstaben im runden Logo und im Browser-Symbol (Favicon). Leer gelassen werden die Anfangsbuchstaben des Namens verwendet.'
+en:
+  THEME_ABOUTME:
+    SKIP: 'Skip to content'
+    MAIN_NAV: 'Main menu'
+    LEGAL_NAV: Legal
+    LANG_NAV: 'Choose language'
+    MODE_TOGGLE: 'Toggle dark mode'
+    MENU_OPEN: 'Open menu'
+    CONTACT: Contact
+    IMPRESSUM: 'Legal notice'
+    PRIVACY: Privacy
+    WRITE_MESSAGE: 'Write a message'
+    AI_BUILT: 'AI-assisted development'
+    SCREENSHOT: Screenshot
+    PHOTO: Photo
+    WATCH_YOUTUBE: 'Watch on YouTube'
+    VIDEO_NOTE: "The videos open on YouTube. Once you click, YouTube's privacy policy applies."
+    LOGO: Logo
+    ERROR: Error
+    ERROR_TITLE: 'This page does not exist.'
+    ERROR_TEXT: 'It may have moved. Continue on the home page.'
+    TO_HOME: 'Go to home page'
+    LB_VIEW: 'Image view'
+    LB_CLOSE: Close
+    LB_PREV: 'Previous image'
+    LB_NEXT: 'Next image'
+    READ_MORE: 'Read more'
+    VIEW_ALL: 'View all'
+    BACK_TO: 'Back to'
+    SLIDER: 'Image gallery'
+    SLIDE_PREV: 'Previous slide'
+    SLIDE_NEXT: 'Next slide'
+    SLIDE_GOTO: 'Go to slide'
+    NEWS_PREV: 'Previous news'
+    NEWS_NEXT: 'More news'
+    DATE_FORMAT: 'j M Y'
+    NO_POSTS: 'No posts yet.'
+    CATEGORY:
+      Beruf: Work
+      Ehrenamt: Volunteering
+      Weiterbildung: Training
+      Studium: Education
+      Projekt: Project
+    ADMIN:
+      ABSCHNITT: Section
+      ADRESSE: Address
+      AENDERT_AKZENTFARBEN_BUTTONS_DUNKLE_KACH: 'Changes accent colours, buttons, dark tiles and background glow. Applies to light and dark mode.'
+      ALLE_ARTIKEL: 'All articles'
+      ALLE_NEWS: 'All news'
+      ALS_DUNKLE_KARTE_HERVORHEBEN: 'Highlight as dark card'
+      ANZAHL: Number
+      ARTIKEL: Articles
+      AURORA_SANFT_BEWEGT: 'Aurora (gently moving)'
+      AUS: 'Off'
+      AUTOMATISCH: Automatic
+      AUTOMATISCH_FOLGT_DER_EINSTELLUNG_DES_BE: "“Automatic” follows the visitor's setting."
+      AUTOMATISCH_WEITERBLAETTERN: 'Advance automatically'
+      BEITRAG: Post
+      BERUF: Work
+      BERUF_SEIT_2016: 'Work · since 2016'
+      BESCHREIBUNG: Description
+      BILD: Image
+      BILDBESCHREIBUNG_ALT_TEXT: 'Image description (alt text)'
+      BILDBESCHREIBUNG_DES_LOGOS: 'Logo description'
+      BILDER: Images
+      BILDER_ZUERST_IM_REITER_INHALT_BEI_DEN_M: 'Upload images first in the “Content” tab under media. The order of the list is the order on the page. The gallery is maintained in the main language and appears automatically in the other languages. There you only add an image if you want to translate its description.'
+      BILDER_ZUERST_IM_REITER_INHALT_BEI_DEN_M_2: 'Upload images first in the “Content” tab under media. Wide landscape (e.g. 2000 × 900 pixels) works best. The order of the list is the order in the slider.'
+      BILD_STEHT: 'Image position'
+      BILD_ZUERST_IM_REITER_INHALT_UNTER_MEDIE: 'Upload the image first in the “Content” tab under media. Ideal: portrait 4:5, at least 720 × 900 pixels. Without a photo the monogram is shown.'
+      BROWSERFENSTER: 'Browser window'
+      BUTTON_TEXT: 'Button text'
+      BUTTON_TEXT_JE_ARTIKEL: 'Button text per article'
+      BUTTON_TEXT_OPTIONAL: 'Button text (optional)'
+      BUTTON_ZIEL: 'Button target'
+      DARSTELLUNG: Appearance
+      DAS_DATUM_STELLST_DU_IM_REITER_OPTIONEN: 'Set the date in the “Options” tab; posts are sorted by it. Upload images first in the “Content” tab under media. If none is selected, the first image in the folder is used.'
+      DATUM_ANZEIGEN: 'Show date'
+      DER_KONTAKT_BUTTON_IN_DER_MENUELEISTE_SP: 'The contact button in the menu bar jumps to #kontakt.'
+      DIE_REIHENFOLGE_DER_LISTE_IST_DIE_REIHEN: 'The order of the list is the order on the website. Drag entries by the handle on the left. Entries without an address are not shown.'
+      DIE_VIDEOS_WERDEN_VERLINKT_NICHT_EINGEBE: 'Videos are linked, not embedded, so no data is sent to YouTube when the page loads.'
+      DUNKEL: Dark
+      DUNKELBLAU: 'Dark blue'
+      DUNKELROT: 'Dark red'
+      EHRENAMT: Volunteering
+      EINFARBIG: Plain
+      EINLEITUNG_UNTER_DEM_TITEL: 'Introduction below the title'
+      EINTRAEGE: Entries
+      EINTRAEGE_VON_OBEN_NACH_UNTEN: 'Entries (top to bottom)'
+      EIN_SATZ_DAZU: 'One sentence'
+      EIN_SATZ_DAZU_OPTIONAL: 'One sentence (optional)'
+      EMPFAENGER_UND_ABSENDER_DES_KONTAKTFORMU: 'Set the recipient and sender of the contact form under Plugins → Email (fields “To” and “From”).'
+      ERSCHEINT_AUF_DER_STARTSEITE_UND_UNTER_D: 'Shown on the home page and below the title. Leave empty to use the beginning of the text.'
+      FARBMODUS: 'Colour mode'
+      FARBSCHEMA: 'Colour scheme'
+      FARBVERLAUF_DEZENT: 'Gradient (subtle)'
+      FONT_BODY: 'Font for text'
+      FONT_BRICOLAGE: 'Bricolage Grotesque – modern, bold (default)'
+      FONT_FIGTREE: 'Figtree – friendly, clear (default)'
+      FONT_FRAUNCES: 'Fraunces – elegant serif'
+      FONT_HEADING: 'Font for headings'
+      FONT_HILFE: 'All fonts are stored locally in the theme, with no connection to Google. Only the selected font is loaded.'
+      FONT_INTER: 'Inter – neutral, highly legible'
+      FONT_OPENSANS: 'Open Sans – open, friendly'
+      FONT_PLAYFAIR: 'Playfair Display – classic, refined'
+      FONT_ROBOTO: 'Roboto – matter-of-fact, widely used'
+      FONT_SORA: 'Sora – geometric, clean'
+      FONT_SOURCESANS: 'Source Sans 3 – calm, slightly narrower'
+      FONT_SPACE: 'Space Grotesk – technical, distinctive'
+      FOTO: Photo
+      FOTOGRAF_IN: Photographer
+      FOTOGRAF_IN_OPTIONAL: 'Photographer (optional)'
+      FOTO_SEITE: 'Photo position'
+      FOTO_SEITE_HILFE: 'Side of the photo next to the text. On phones the photo always appears below the text.'
+      FRONT_ARTICLES: 'Show articles'
+      FRONT_CONTACT: 'Show contact section'
+      FRONT_NEWS: 'Show news'
+      FRONT_SECTIONS_HILFE: 'Applies to all languages. Hidden sections keep their content.'
+      FRONT_SLIDER: 'Show image slider'
+      FRONT_TEASER: 'Show short profile'
+      FUNKE_KI: 'Spark (AI)'
+      FUSSZEILE: Footer
+      FUSSZEILE_HILFE: 'Shown after “© year”. If left empty, the name from the menu bar is used.'
+      GALERIE: Gallery
+      GALERIE_BILD_FORMAT: Format
+      GALERIE_BILD_FORMAT_HILFE: 'Differs from the gallery format, e.g. a landscape image in a portrait gallery. It is then shown three columns wide or two rows tall.'
+      GALERIE_BILD_WIE_GALERIE: 'Same as gallery'
+      GALERIE_FORMAT: 'Thumbnail format'
+      GALERIE_FORMAT_HILFE: 'Landscape for photos, portrait for phone screenshots. Animated GIFs stay animated.'
+      GALERIE_FORMAT_HOCH: 'Portrait (phone screenshots)'
+      GALERIE_FORMAT_QUER: 'Landscape (photos)'
+      GALERIE_VIDEOS: 'Gallery & videos'
+      GEFUELLT: Filled
+      GELB: Yellow
+      GILT_FUER_ALLE_SEITEN_AURORA_BEWEGT_SICH: 'Applies to all pages. “Aurora” moves very slowly unless the visitor prefers reduced motion.'
+      GLOBUS: Globe
+      GRAFIK_OHNE_SCREENSHOT: 'Graphic without screenshot'
+      GRAPHIT_ANTHRAZIT: 'Graphite / anthracite'
+      GRAUER_VERLAUF_UEBER_DEM_BILD_UNTEN_DUNK: 'Grey gradient over the image, darker at the bottom than at the top. Choose “Strong” for bright images.'
+      GROSSE_ZAHL_AUF_DER_KARTE: 'Large number on the card'
+      HELL: Light
+      HELLBLAU: 'Light blue'
+      HELLROT: 'Light red'
+      HINTERGRUND: Background
+      HINTERGRUNDBILD_OPTIONAL: 'Background image (optional)'
+      HOECHSTENS_ANZEIGEN: 'Show at most'
+      IMPRESSIONEN: Impressions
+      INFOKARTEN_AM_FOTO: 'Info cards on the photo'
+      IN_NEUEM_TAB_OEFFNEN: 'Open in new tab'
+      IST_DER_SCHALTER_AN_ZEIGT_DIE_STARTADRES: 'When switched on, the home address (“/”) shows the “Start” page with slider, about-me teaser, articles and news. The profile page stays available at its own address (e.g. “/about”). Edit the sections under Pages → Start, and articles and news under the pages of the same name.'
+      JE_EINE_KARTE_OBEN_UND_UNTEN_AM_FOTO_DIE: 'One card at the top and one at the bottom of the photo. The side (left or right) can be chosen freely; both cards may also be on the same side. Empty cards are not shown.'
+      KATEGORIE: Category
+      KENNZAHLEN_UNTER_DEM_KOPFBEREICH: 'Key figures below the header'
+      KENNZEICHNUNG: Label
+      KLEINBUCHSTABEN_OHNE_LEERZEICHEN_Z_B_UEB: 'Lower case without spaces, e.g. ueber-mich.'
+      KLEINE_KENNZEICHNUNG: 'Small label'
+      KLEINE_ZEILE: 'Small line'
+      KLEINE_ZEILE_MIT_ORANGEM_PUNKT_UEBER_DER: 'Small line with an orange dot above the heading.'
+      KLEINE_ZEILE_OPTIONAL: 'Small line (optional)'
+      KLEINE_ZEILE_UEBER_DEM_TITEL: 'Small line above the title'
+      KLEINE_ZEILE_UEBER_DEN_VIDEOS: 'Small line above the videos'
+      KLEINE_ZEILE_UEBER_DER_GALERIE: 'Small line above the gallery'
+      KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT: 'Small line above the heading'
+      KOMPETENZEN: Skills
+      KOMPETENZ_GRUPPEN: 'Skill groups'
+      KONTAKT: Contact
+      KOPFBEREICH: Header
+      KURZTEXT: 'Short text'
+      LAEUFT_AKTUELL: Ongoing
+      LAEUFT_AKTUELL_ORANGER_PUNKT: 'Ongoing (orange dot)'
+      LEER_LASSEN_FUER_DIE_PROFILSEITE: 'Leave empty for the profile page.'
+      LEER_LASSEN_FUER_DIE_SEITE_MIT_DEM_KONTA: 'Leave empty for the page with the contact form (/contact or /kontakt).'
+      LEICHT_STANDARD: 'Light (default)'
+      LILA: Purple
+      LINKS: Left
+      LINKTEXT: 'Link text'
+      LINKTEXT_OPTIONAL: 'Link text (optional)'
+      LINKZIEL_OPTIONAL: 'Link target (optional)'
+      LINK_1_ADRESSE: 'Link 1, address'
+      LINK_1_TEXT: 'Link 1, text'
+      LINK_2_ADRESSE_OPTIONAL: 'Link 2, address (optional)'
+      LINK_2_TEXT_OPTIONAL: 'Link 2, text (optional)'
+      LINK_ALLE_ARTIKEL_OPTIONAL: 'Link “All articles” (optional)'
+      LINK_ALLE_NEWS_OPTIONAL: 'Link “All news” (optional)'
+      LINK_KARTE_AM_TEXTENDE: 'Link card at the end of the text'
+      LISTE: List
+      LISTET_ALLE_UNTERSEITEN_BEITRAEGE_NACH_D: 'Lists all subpages (posts) by date, newest first. Create new posts as subpages with the page type “Beitrag” (post).'
+      MAGENTA_BEERE: 'Magenta / berry'
+      MARKDOWN_MOEGLICH_Z_B_FETT_ODER_EINE_LIS: 'Markdown allowed, e.g. **bold** or a bulleted list.'
+      MEHR_UEBER_DEN_VEREIN: 'More about the association'
+      MEHR_UEBER_MICH: 'More about me'
+      MEHR_ZUM_EHRENAMT: 'More about the volunteering'
+      MENUE: Menu
+      MENUEEINTRAEGE: 'Menu items'
+      MENU_SECTION_TEXT: 'This list is the website menu. Change the order by dragging the handle on the left, remove entries with the bin or add new ones, then save. If the list is empty, it is filled with the currently visible pages the next time you open it. New pages only appear in the menu once they are added here. The “Contact” button always stays.'
+      MENU_TEXT: Text
+      MENU_TEXT_HILFE: 'Text in the default language of the website. It is also used for all languages without their own translation.'
+      MENU_UEBERSETZUNGEN: 'Translations (optional)'
+      MENU_UEBERSETZUNGEN_HILFE: 'Language code on the left (e.g. en, fr), text in that language on the right.'
+      MITTIG: Centred
+      MIT_KOMMA_GETRENNT_Z_B_ANDROID_PWA: 'Comma separated, e.g. Android, PWA'
+      MIT_KOMMA_GETRENNT_Z_B_SCRUM_JIRA_MODERA: 'Comma separated, e.g. Scrum, Jira, Moderation'
+      MONOGRAMM: Monogram
+      NACHRICHT_SCHREIBEN: 'Write a message'
+      NAME_HILFE: 'If left empty, the site title from Configuration → Site is used.'
+      NAME_IN_DER_MENUELEISTE: 'Name in the menu bar'
+      NAME_SPRINGT_ZU_EINEM_ABSCHNITT_DER_STAR: '#name jumps to a section of the home page (anchor), /page opens a page (the language is added automatically), https://… opens an external address.'
+      NAME_UND_LOGO: 'Name and logo'
+      NETZWERK: Network
+      NORMALERWEISE_START_NUR_AENDERN_WENN_DIE: 'Usually /start. Only change this if the front page is in a different folder.'
+      OBEN: Top
+      OBEN_KLEINE_ZEILE: 'Top: small line'
+      OBEN_SEITE: 'Top: side'
+      OBEN_WERT: 'Top: value'
+      OPTIONAL_Z_B_MEHR_UEBER_DEN_VEREIN_MIT_L: 'Optional, e.g. “More about the association” with logo. Without an address no card is shown. Upload the logo first in the “Content” tab under media.'
+      ORDNER_DER_ARTIKEL: 'Articles folder'
+      ORDNER_DER_MELDUNGEN: 'News folder'
+      ORT_ORGANISATION: 'Place / organisation'
+      PERSONEN: People
+      PETROL_STANDARD: 'Petrol (default)'
+      PH_BADGE_BOTTOM_VALUE: 'Scrum · ITIL'
+      PH_BADGE_TOP_LABEL: Experience
+      PH_BADGE_TOP_VALUE: '15+ years'
+      PH_LOGO_ALT: 'Logo of the organisation'
+      PH_PHOTO_ALT: 'Portrait of Jon Doe'
+      PH_STATUS: 'Currently: Project lead at Example Inc.'
+      PROFILE: Profiles
+      PROJEKT: Project
+      PROJEKTE: Projects
+      PROJEKTE_EHRENAMT_ODER_HTTPS: '#projekte, /ehrenamt or https://…'
+      PROJEKTE_ODER_STATIONEN: '#projekte or /career'
+      PUNKTRASTER_TECH: 'Dot grid (tech)'
+      QUERFORMAT_IDEAL_960_420_PIXEL_OHNE_BILD: 'Landscape, ideally 960 × 420 pixels. Without an image a small graphic is shown.'
+      RECHTS: Right
+      RUBRIKEN: Sections
+      SCHILD_MIT_HAKEN: 'Shield with tick'
+      SCHLAGWORTE: Tags
+      SCHLAGWORT_KI_GESTUETZT_ENTWICKELT_ANZEI: 'Show tag “AI-assisted development”'
+      SCHLEIER_FUER_BESSERE_LESBARKEIT: 'Overlay for better readability'
+      SEITENKOPF: 'Page header'
+      SEITE_DATENSCHUTZ: 'Privacy policy page'
+      SEITE_FUER_DIE_STARTADRESSE: 'Page for the home address'
+      SEITE_IMPRESSUM: 'Legal notice page'
+      SEIT_2016_ODER_2010_2016: 'since 2016 or 2010 – 2016'
+      SEKUNDEN_PRO_BILD: 'Seconds per image'
+      SMARAGDGRUEN: Emerald
+      SOCIAL_IM_MENUE: 'Show in top menu'
+      SOCIAL_IM_MENUE_HILFE: 'The contact section and the mobile menu always show all profiles.'
+      SOCIAL_MEDIA: 'Social media'
+      SPRACHE: Language
+      SPRACHE_AUTOMATISCH_HILFE: 'If a visitor’s browser prefers another of the configured languages than the default language, they are redirected once to that version on their first visit (e.g. /en). If no configured language is preferred, English is used if available. After choosing a language in the switcher they are no longer redirected (language cookie). Search engines are not affected.'
+      SPRACHE_AUTOMATISCH_WAEHLEN: 'Choose language automatically'
+      SPRUNGMARKE: Anchor
+      STARK: Strong
+      STARTSEITE_VORSCHALTEN: 'Show front page'
+      STATUSZEILE: 'Status line'
+      STIFT_DESIGN: 'Pen (design)'
+      STIL: Style
+      STUDIUM: Education
+      SYMBOL: Icon
+      TEXT_IN_DER_FUSSZEILE: 'Footer text'
+      TEXT_NEBEN_DEM_BILD: 'Text next to the image'
+      TEXT_ZWISCHEN_ZWEI_GLEICHHEITSZEICHEN_WI: 'Text between two double equals signs is highlighted in colour, e.g. ==Assuring quality.==. The introduction is in the “Content” tab.'
+      TEXT_ZWISCHEN_ZWEI_GLEICHHEITSZEICHEN_WI_2: 'Text between two double equals signs is highlighted, e.g. ==Quality==.'
+      TITEL: Title
+      UEBERSCHRIFT: Heading
+      UEBERSCHRIFT_DER_GALERIE: 'Gallery heading'
+      UEBERSCHRIFT_DER_VIDEOS: 'Videos heading'
+      UEBERSCHRIFT_FELD_TITEL_TEXTAUSZUG_TEXTF: 'Heading = field “Title”, excerpt = text field in the “Content” tab. Upload the image first in the “Content” tab under media.'
+      UEBERSCHRIFT_OPTIONAL: 'Heading (optional)'
+      UEBERSICHT: Overview
+      UEBER_MICH_EHRENAMT_ODER_HTTPS: '/about, /gallery or https://…'
+      UMRANDET: Outline
+      UMSCHALTER_HELL_DUNKEL_ANZEIGEN: 'Show light/dark switch'
+      UNTEN_KLEINE_ZEILE: 'Bottom: small line'
+      UNTEN_SEITE: 'Bottom: side'
+      UNTEN_WERT: 'Bottom: value'
+      UNTERZEILE: Subline
+      VORGELAGERTE_STARTSEITE: 'Front page'
+      WEITERBILDUNG: Training
+      WEITERLESEN: 'Read more'
+      YOUTUBE_ADRESSE: 'YouTube address'
+      ZAHL: Number
+      ZEIGT_DIE_NEUESTEN_ARTIKEL_AUS_DEM_ANGEG: 'Shows the latest articles from the given folder with title, image, excerpt and button. Edit the articles themselves under Pages → Artikel (page type “Beitrag”). Without articles the section is hidden.'
+      ZEIGT_DIE_NEUESTEN_MELDUNGEN_AUS_DEM_ANG: 'Shows the latest news from the given folder: image, date, title and two lines of text. On desktop up to three are shown side by side; more can be reached with the arrows or by swiping. Edit the news under Pages → News (page type “Beitrag”).'
+      ZEITRAUM: Period
+      ZEITSTRAHL: Timeline
+      ZERTIFIZIERT: Certified
+      ZIEL: Target
+      ZWEI_BIS_DREI_BUCHSTABEN_IM_RUNDEN_LOGO: 'Two or three letters in the round logo and the browser icon (favicon). If left empty, the initials of the name are used.'

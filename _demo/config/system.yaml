@@ -1,0 +1,26 @@
+home:
+  alias: '/about'
+
+languages:
+  supported:
+    - de
+    - en
+  default_lang: de
+  include_default_lang: false
+  include_default_lang_file_extension: true
+  translations: true
+  translations_fallback: true
+  session_store_active: false
+  http_accept_language: false
+
+pages:
+  theme: aboutme
+
+cache:
+  enabled: true
+  check:
+    method: file
+
+errors:
+  display: false
+  log: true

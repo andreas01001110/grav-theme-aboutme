@@ -1,0 +1,57 @@
+title: Kompetenzen
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        nh_skills:
+          type: tab
+          title: THEME_ABOUTME.ADMIN.KOMPETENZEN
+          ordering@: 0
+          fields:
+            header.anchor:
+              type: text
+              label: THEME_ABOUTME.ADMIN.SPRUNGMARKE
+              size: medium
+            header.eyebrow:
+              type: text
+              label: THEME_ABOUTME.ADMIN.KLEINE_ZEILE_UEBER_DER_UEBERSCHRIFT
+            header.groups:
+              type: list
+              label: THEME_ABOUTME.ADMIN.KOMPETENZ_GRUPPEN
+              style: vertical
+              collapsed: true
+              fields:
+                .uid:
+                  type: hidden
+                .title:
+                  type: text
+                  label: THEME_ABOUTME.ADMIN.TITEL
+                .icon:
+                  type: select
+                  label: THEME_ABOUTME.ADMIN.SYMBOL
+                  default: list
+                  options:
+                    list: THEME_ABOUTME.ADMIN.LISTE
+                    shield: THEME_ABOUTME.ADMIN.SCHILD_MIT_HAKEN
+                    users: THEME_ABOUTME.ADMIN.PERSONEN
+                    code: Code
+                    spark: THEME_ABOUTME.ADMIN.FUNKE_KI
+                    server: Server
+                    pen: THEME_ABOUTME.ADMIN.STIFT_DESIGN
+                    globe: THEME_ABOUTME.ADMIN.GLOBUS
+                .highlight:
+                  type: toggle
+                  label: THEME_ABOUTME.ADMIN.ALS_DUNKLE_KARTE_HERVORHEBEN
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+                .items:
+                  type: textarea
+                  label: THEME_ABOUTME.ADMIN.EINTRAEGE
+                  rows: 3
+                  description: THEME_ABOUTME.ADMIN.MIT_KOMMA_GETRENNT_Z_B_SCRUM_JIRA_MODERA
