@@ -8,6 +8,10 @@ author:
   name: 'Andreas G. Neuhauser'
   email: development@andreas-neuhauser.eu
   url: 'https://andreas-neuhauser.de'
+homepage: 'https://github.com/andreas01001110/grav-theme-aboutme'
+bugs: 'https://github.com/andreas01001110/grav-theme-aboutme/issues'
+docs: 'https://github.com/andreas01001110/grav-theme-aboutme/blob/main/README.md'
+readme: 'https://github.com/andreas01001110/grav-theme-aboutme/blob/main/README.md'
 keywords: 'about me, profile, portfolio, cv, resume, one-page, timeline, gallery, multilingual, dark mode, modular'
 license: MIT
 compatibility:
